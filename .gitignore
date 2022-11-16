@@ -1,3 +1,10 @@
+# Custom ignores.
+*logs
+*saved_models
+config.py
+*.DS_Store*
+models/checkpoints*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
