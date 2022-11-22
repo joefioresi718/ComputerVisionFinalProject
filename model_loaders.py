@@ -81,8 +81,8 @@ def build_i3d_classifier(num_classes=params.num_classes, pretrained=True):
     if pretrained:
         saved_weights = torch.load(os.path.join('saved_models', 'rgb_imagenet.pt'))
         model.load_state_dict(saved_weights, strict=True)
-    if params.num_classes != 400:
-        model.replace_logits(params.num_classes)
+        if params.num_classes != 400:
+            model.replace_logits(params.num_classes)
     return model
 
 
