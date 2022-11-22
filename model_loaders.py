@@ -2,7 +2,6 @@ import os.path
 import torch
 import torch.nn as nn
 from torchvision.models import swin_transformer, Swin_B_Weights
-from vit_pytorch import ViT
 
 import parameters as params
 from models.r3d import r3d_18_classifier
