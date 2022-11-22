@@ -175,7 +175,7 @@ def train_classifier(run_id, restart, saved_model):
     print(f'Validation dataset length: {len(validation_dataset)}')
     print(f'Validation dataset steps per epoch: {len(validation_dataset)/params.v_batch_size}')
 
-    val_array = [1, 5, 10, 25] + [40 + x for x in range(100)]
+    val_array = [1, 3, 5, 10, 20, 25, 30, 35] + [40 + x for x in range(100)]
 
     skip = list(range(1, params.num_skips + 1))
     print(f'Num skips {skip}')
