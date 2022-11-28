@@ -179,6 +179,6 @@ if __name__ == '__main__':
     for i in range(16):
         plt.subplot(4, 4, i + 1)
         plt.imshow(clip[i, ...].permute(1, 2, 0))
-        plt.title(f'Frame #: {frame_pos[i]}', y=-.18)
+        plt.title(f'Vid Idx {frame_pos}', y=-.18)
         plt.axis('off')
     plt.show()

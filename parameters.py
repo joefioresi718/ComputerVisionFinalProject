@@ -7,13 +7,15 @@ num_frames = 16
 fix_skip = 2
 num_modes = 5
 num_skips = 1
-data_percentage_ucf101 = 0.2
+data_percentage_ucf101 = 1.0
 
+######################
 # Training parameters.
 batch_size_ucf101 = 16
 v_batch_size = 10
-num_workers = 4
 learning_rate = 1e-4
+######################
+num_workers = 4
 num_epochs = 100
 warmup_array = list(np.linspace(0.01, 1, 5) + 1e-9)
 warmup = len(warmup_array)
