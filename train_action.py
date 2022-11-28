@@ -266,7 +266,6 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
     print(f'Run ID: {args.run_id}')
-    print(f'Restart {args.restart}')
     print(f'Architecture: {args.arch}')
 
     train_classifier(args.run_id, args.arch, args.saved_model)
