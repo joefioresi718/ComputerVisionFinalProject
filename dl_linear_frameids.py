@@ -10,7 +10,7 @@ from torchvision import transforms, utils
 
 import config as cfg
 import random
-import pickle
+# import pickle
 # import parameters_BL as params
 import json
 import math
@@ -75,7 +75,7 @@ class baseline_dataloader_train_strong(Dataset):
     
         # label_building
         if self.dataset == 'ucf101':
-            vid_path = cfg.path_folder + '/UCF-101/' + self.data[idx].split(' ')[0]
+            vid_path = cfg.path_folder + '/Videos/' + self.data[idx].split(' ')[0]
             label = self.classes[vid_path.split('/')[-2]] # This element should be activity name
         elif self.dataset == 'hmdb51':
             vid_path = self.data[idx]
@@ -85,7 +85,7 @@ class baseline_dataloader_train_strong(Dataset):
             vid_path = cfg.path_folder + '/Kinetics/kinetics-dataset/' + self.data[idx].split(' ')[0]
             # label = -1 # I need to put label info in the full paths yet
             label = int(self.data[idx].split(' ')[1]) - 1 
-            
+
         # clip_building
         clip, frame_list = self.build_clip(vid_path)
 
@@ -679,7 +679,7 @@ if __name__ == '__main__':
     
     train_dataset = baseline_dataloader_train_strong(params = params, dataset= dataset, shuffle = False, data_percentage = 1.0)
     train_dataloader = DataLoader(train_dataset, batch_size=params.batch_size, \
-        shuffle=True, collate_fn=collate_fn_train, num_workers=params.num_workers)
+        shuffle=True, collate_fn=collate_fn_train, num_workers=0)
 
     print(f'Length of dataset: {len(train_dataset)}')
     print(f'Step involved: {len(train_dataset)/params.batch_size}')

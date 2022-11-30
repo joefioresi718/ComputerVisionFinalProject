@@ -2,7 +2,7 @@
 ############ dataloader realated params
 import numpy as np
 import math
-num_workers = 8
+num_workers = 4
 batch_size = 24#8
 # batch_size = 56#8
 # batch_size = 56#8
