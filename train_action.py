@@ -26,7 +26,7 @@ torch.backends.cudnn.benchmark = True
 
 # Training epoch.
 def train_epoch(epoch, data_loader, model, criterion, optimizer, writer, use_cuda, lr):
-    print('Train at epoch {}'.format(epoch))
+    print(f'Train at epoch {epoch}')
     for param_group in optimizer.param_groups:
         param_group['lr'] = lr
         writer.add_scalar('Learning Rate', lr, epoch)  
@@ -132,7 +132,7 @@ def accuracy(output, target, topk=(1,)):
     
 
 # Main code. 
-def train_classifier(run_id, restart, saved_model):
+def train_classifier(run_id, arch, saved_model):
     for k, v in params.__dict__.items():
         print(f'{k} : {v}')
     # Empty cuda cache.
@@ -146,7 +146,7 @@ def train_classifier(run_id, restart, saved_model):
         os.makedirs(save_dir)
     
     # Load in model.
-    model = load_ft_model(arch='r3d', kin_pretrained=True, saved_model_file=saved_model)
+    model = load_ft_model(arch=arch, kin_pretrained=True, saved_model_file=saved_model)
 
     # Init loss function.
     criterion = nn.CrossEntropyLoss()
@@ -261,11 +261,11 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Script to train baseline')
 
     parser.add_argument("--run_id", dest='run_id', type=str, required=False, default='default_ft_baseline', help='run_id')
-    parser.add_argument("--restart", action='store_true')
     parser.add_argument("--saved_model", dest='saved_model', type=str, required=False, default= None, help='saved_model')
+    parser.add_argument("--arch", dest='arch', type=str, required=False, default='r3d', help='model architecture')
 
     args = parser.parse_args()
     print(f'Run ID: {args.run_id}')
-    print(f'Restart {args.restart}')
+    print(f'Architecture: {args.arch}')
 
-    train_classifier(args.run_id, args.restart, args.saved_model)
+    train_classifier(args.run_id, args.arch, args.saved_model)
