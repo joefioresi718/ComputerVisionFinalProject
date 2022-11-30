@@ -323,7 +323,7 @@ def train_classifier(run_id, arch, saved_model):
             for val_iter in range(len(modes)):
                 for cropping_fac in cropping_facs:
                     # try:
-                    validation_dataset = multi_baseline_dataloader_val_strong(params = params1, dataset='ucf101', shuffle = True, data_percentage = 0.01,\
+                    validation_dataset = multi_baseline_dataloader_val_strong(params = params1, dataset='ucf101', shuffle = True, data_percentage = params.data_percentage_ucf101,\
                         mode = modes[val_iter], cropping_factor= cropping_fac, total_num_modes = params.num_modes, casia_split = params.casia_split)
                     validation_dataloader = DataLoader(validation_dataset, batch_size=params.v_batch_size, shuffle=True, num_workers=params.num_workers, collate_fn=collate_fn2)
                     pred_dict, label_dict, accuracy, loss = val_epoch(run_id, epoch, modes[val_iter], cropping_fac, pred_dict, label_dict, validation_dataloader, model, criterion, writer, use_cuda,device_name)
