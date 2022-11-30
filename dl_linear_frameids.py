@@ -586,7 +586,7 @@ def collate_fn_train(batch):
     return f_clip, label, vid_path, frame_list
 
 if __name__ == '__main__':
-    import p_kl2_crop08norm as params
+    import params_linear3_2d3d_crop06 as params
     
     import torchvision
     from PIL import Image, ImageDraw, ImageFont
@@ -668,8 +668,8 @@ if __name__ == '__main__':
 
     visualize = True
     casia_split = 'doesntmatter'
-    run_id = 'kin' #'ucf_valTry2_crop1'
-    dataset = 'k400'#'hmdb51'
+    run_id = 'ucf101' #'ucf_valTry2_crop1'
+    dataset = 'ucf101'#'hmdb51'
     
     vis_output_path = 'some_visualization/finetuning_dl/' + run_id
     
@@ -748,7 +748,7 @@ if __name__ == '__main__':
                 exit()
             
     print(f'Time taken to load data is {time.time()-t}')
-    print(f'Time taken to load data is {time.time()-t}')        
+    # print(f'Time taken to load data is {time.time()-t}')        
             
             
             
