@@ -46,7 +46,9 @@ class baseline_dataloader_train_strong(Dataset):
             self.all_paths = open(os.path.join(cfg.path_folder,file_name),'r').read().splitlines()
             self.classes= json.load(open(cfg.hmdb_mapping))
         elif self.dataset == 'k400':
-            self.all_paths = open('/sensei-fs/users/idave/data/k400train_full_path_resized_annos.txt','r').read().splitlines()
+            # self.all_paths = open('/sensei-fs/users/idave/data/k400train_full_path_resized_annos.txt','r').read().splitlines()
+            all_paths = open(os.path.join(cfg.kinetics_path, 'annotation_train_fullpath_resizedvids.txt'),'r').read().splitlines()
+            self.all_paths = [x.replace(f'/home/c3-0/datasets/kin400_resized/{split}/', os.path.join(cfg.kinetics_path, split) + '/') for x in all_paths]
         else:
             print(f'{self.dataset} dne')
             
@@ -82,7 +84,7 @@ class baseline_dataloader_train_strong(Dataset):
             label = self.classes[vid_path.split(' ')[1]]
             vid_path = cfg.path_folder  + '/hmdb/' + vid_path.split(' ')[1]+ '/' + vid_path.split(' ')[0]
         elif self.dataset == 'k400':
-            vid_path = cfg.path_folder + '/Kinetics/kinetics-dataset/' + self.data[idx].split(' ')[0]
+            vid_path = self.data[idx].split(' ')[0]
             # label = -1 # I need to put label info in the full paths yet
             label = int(self.data[idx].split(' ')[1]) - 1 
 
@@ -205,7 +207,7 @@ class baseline_dataloader_train_strong(Dataset):
                 return None, None   
 
         except:
-            traceback.print_exc()
+            # traceback.print_exc()
             print(f'Clip {vid_path} Failed')
             return None, None
 
@@ -342,13 +344,13 @@ class multi_baseline_dataloader_val_strong(Dataset):
                 
         elif self.dataset=='k400':
             if retrieval_train:
-                self.all_paths = open('/sensei-fs/users/idave/data/k400train_full_path_resized_annos.txt','r').read().splitlines()
-
+                # self.all_paths = open(os.path.join(cfg.kinetics_path, 'k400train_full_path_resized_annos.txt'),'r').read().splitlines()
+                self.all_paths = open(os.path.join(cfg.kinetics_path, 'annotation_train_fullpath_resizedvids.txt'),'r').read().splitlines()
 
             else:
                 # print('here')
-                self.all_paths = open('/sensei-fs/users/idave/data/k400val_full_path_resized_annos.txt','r').read().splitlines()
-                
+                # self.all_paths = open(os.path.join(cfg.kinetics_path, 'k400val_full_path_resized_annos.txt'),'r').read().splitlines()
+                self.all_paths = open(os.path.join(cfg.kinetics_path, 'annotation_val_fullpath_resizedvids.txt'),'r').read().splitlines()
                 
         elif self.dataset=='casia':
             
@@ -402,7 +404,8 @@ class multi_baseline_dataloader_val_strong(Dataset):
             vid_path1 = cfg.path_folder  + '/hmdb/' + vid_path.split(' ')[1]+ '/' + vid_path.split(' ')[0]
             
         elif self.dataset == 'k400':
-            vid_path1 = cfg.path_folder + '/Kinetics/kinetics-dataset/' + self.data[idx].split(' ')[0]
+            # vid_path1 = cfg.kinetics_folder + '/Kinetics/kinetics-dataset/' + self.data[idx].split(' ')[0]
+            vid_path1 = self.data[idx].split(' ')[0]
             # label = -1 # I need to put label info in the full paths yet
             label = int(self.data[idx].split(' ')[1]) - 1 
             
@@ -415,7 +418,7 @@ class multi_baseline_dataloader_val_strong(Dataset):
         # clip_building
         clip, frame_list = self.build_clip(vid_path1)
 
-        return clip, label, vid_path1, idx
+        return clip, label, vid_path1, frame_list
 
     def build_clip(self, vid_path):
         try:
@@ -494,7 +497,7 @@ class multi_baseline_dataloader_val_strong(Dataset):
             return full_clip, list_full
 
         except:
-            # traceback.print_exc()
+            traceback.print_exc()
             print(f'Clip {vid_path} Failed, frame_count {frame_count}')
             return None, None
 
@@ -557,12 +560,12 @@ def collate_fn2(batch):
             f_clip.append(torch.stack(item[0],dim=0)) 
             label.append(item[1])
             vid_path.append(item[2])
-            # frame_list.append(torch.from_numpy(np.asarray(item[3])))
+            frame_list.append(torch.from_numpy(np.asarray(item[3])))
             # frame_list.append(torch.from_numpy(np.asarray(list(range(8)))))
-            frame_list.append(torch.tensor(item[3]))
+            # frame_list.append(torch.tensor(item[3]))
 
     f_clip = torch.stack(f_clip, dim=0)
-    # frame_list = torch.stack(frame_list, dim=0)
+    frame_list = torch.stack(frame_list, dim=0)
     
     return f_clip, label, vid_path, frame_list 
             
@@ -667,8 +670,8 @@ if __name__ == '__main__':
 
     visualize = True
     casia_split = 'doesntmatter'
-    run_id = 'ucf101' #'ucf_valTry2_crop1'
-    dataset = 'ucf101'#'hmdb51'
+    run_id = 'k400' #'ucf_valTry2_crop1'
+    dataset = 'k400'#'hmdb51'
     
     vis_output_path = 'some_visualization/finetuning_dl/' + run_id
     
