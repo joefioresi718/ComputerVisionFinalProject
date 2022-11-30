@@ -173,7 +173,7 @@ def train_classifier(run_id, arch, saved_model):
 
     # validation_dataset = ucf101_ar_dataset(data_split='test', shuffle=True, data_percentage=params.data_percentage_ucf101)
     validation_dataset = multi_baseline_dataloader_val_strong(params=params1, dataset='ucf101', shuffle=False, data_percentage=params.data_percentage_ucf101)
-    validation_dataloader = DataLoader(validation_dataset, batch_size=params.v_batch_size, shuffle=True, num_workers=params.num_workers, collate_fn=collate_fn1)
+    validation_dataloader = DataLoader(validation_dataset, batch_size=params.v_batch_size, shuffle=True, num_workers=params.num_workers, collate_fn=collate_fn2)
 
     print(f'Validation dataset length: {len(validation_dataset)}')
     print(f'Validation dataset steps per epoch: {len(validation_dataset)/params.v_batch_size}')

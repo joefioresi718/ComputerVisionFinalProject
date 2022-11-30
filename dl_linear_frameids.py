@@ -394,7 +394,7 @@ class multi_baseline_dataloader_val_strong(Dataset):
         # label_building
         # label_building
         if self.dataset == 'ucf101':
-            vid_path1 = cfg.path_folder + '/UCF-101/' + self.data[idx].split(' ')[0]
+            vid_path1 = cfg.path_folder + '/Videos/' + self.data[idx].split(' ')[0]
             label = self.classes[vid_path1.split('/')[-2]] # This element should be activity name
         elif self.dataset == 'hmdb51':
             vid_path = self.data[idx]
@@ -558,10 +558,11 @@ def collate_fn2(batch):
             label.append(item[1])
             vid_path.append(item[2])
             # frame_list.append(torch.from_numpy(np.asarray(item[3])))
-            frame_list.append(torch.from_numpy(np.asarray(list(range(8)))))
+            # frame_list.append(torch.from_numpy(np.asarray(list(range(8)))))
+            frame_list.append(torch.tensor(item[3]))
 
     f_clip = torch.stack(f_clip, dim=0)
-    frame_list = torch.stack(frame_list, dim=0)
+    # frame_list = torch.stack(frame_list, dim=0)
     
     return f_clip, label, vid_path, frame_list 
             
