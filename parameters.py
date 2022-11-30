@@ -2,7 +2,7 @@ import numpy as np
 
 
 # Dataset parameters.
-num_classes = 101
+num_classes = 102
 num_frames = 16
 fix_skip = 2
 num_modes = 5

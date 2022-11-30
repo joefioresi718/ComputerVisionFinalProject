@@ -71,7 +71,9 @@ bb_pretrained = 'scratch'
 pretrained_checkpoint = None #for scratch-temporal baseline
 if pretrained_checkpoint is not None:
     pretrained_checkpoint = pretrained_checkpoint.replace('-symlink', '')
-    
+
+weak_aug = False
+no_ar_distortion = False
 aspect_ratio_aug = False
 min_crop_factor_training = 0.6
 casia_split = 'doesnt_matter'

@@ -15,6 +15,7 @@ from model_loaders import *
 import parameters as params
 import config as cfg
 from ucf101_dl import *
+from dl_linear_frameids import *
 
 
 # Get rid of DepreciationWarnings.
@@ -42,7 +43,7 @@ def train_epoch(epoch, data_loader, model, criterion, optimizer, writer, use_cud
 
         if use_cuda:
             videos = videos.cuda()
-            label = label.cuda()
+            label = torch.from_numpy(np.asarray(label)).type(torch.LongTensor).cuda()
 
         # Reshape UCF101 inputs.
         output = model(videos.permute(0, 2, 1, 3, 4))
@@ -82,7 +83,7 @@ def val_epoch(epoch, data_loader, model, criterion, use_cuda):
     for i, (videos, label, _, video_idx) in enumerate(data_loader):
         if use_cuda:
             videos = videos.cuda()
-            label = label.cuda()
+            label = torch.from_numpy(np.asarray(label)).type(torch.LongTensor).cuda()
 
         with torch.no_grad():
             output = model(videos.permute(0, 2, 1, 3, 4))
@@ -163,14 +164,16 @@ def train_classifier(run_id, arch, saved_model):
 
     # Check if model params need to be summed.
     optimizer = optim.Adam(model.parameters(), lr=params.learning_rate)
-
-    train_dataset = ucf101_ar_dataset(data_split='train', shuffle=False, data_percentage=params.data_percentage_ucf101)
-    train_dataloader = DataLoader(train_dataset, batch_size=params.batch_size_ucf101, shuffle=True, num_workers=params.num_workers)
+    import params_linear3_2d3d_crop06 as params1
+    # train_dataset = ucf101_ar_dataset(data_split='train', shuffle=False, data_percentage=params.data_percentage_ucf101)
+    train_dataset = baseline_dataloader_train_strong(params=params1, dataset='ucf101', data_percentage=params.data_percentage_ucf101)
+    train_dataloader = DataLoader(train_dataset, batch_size=params.batch_size_ucf101, shuffle=True, num_workers=params.num_workers, collate_fn=collate_fn_train)
     print(f'Train dataset length: {len(train_dataset)}')
     print(f'Train dataset steps per epoch: {len(train_dataset)/params.batch_size_ucf101}')
 
-    validation_dataset = ucf101_ar_dataset(data_split='test', shuffle=True, data_percentage=params.data_percentage_ucf101)
-    validation_dataloader = DataLoader(validation_dataset, batch_size=params.v_batch_size, shuffle=True, num_workers=params.num_workers)
+    # validation_dataset = ucf101_ar_dataset(data_split='test', shuffle=True, data_percentage=params.data_percentage_ucf101)
+    validation_dataset = multi_baseline_dataloader_val_strong(params=params1, dataset='ucf101', shuffle=False, data_percentage=params.data_percentage_ucf101)
+    validation_dataloader = DataLoader(validation_dataset, batch_size=params.v_batch_size, shuffle=True, num_workers=params.num_workers, collate_fn=collate_fn1)
 
     print(f'Validation dataset length: {len(validation_dataset)}')
     print(f'Validation dataset steps per epoch: {len(validation_dataset)/params.v_batch_size}')

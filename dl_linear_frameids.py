@@ -118,7 +118,6 @@ class baseline_dataloader_train_strong(Dataset):
             frames_full = start_frame_full + np.asarray([int(int(skip_frames_full)*f) for f in range(self.params.num_frames)])
 
 
-
             if frames_full[-1] >= frame_count:
                 # print('some corner case not covered')
                 frames_full[-1] = int(frame_count-1)
@@ -134,7 +133,7 @@ class baseline_dataloader_train_strong(Dataset):
 
 
             cropping_factor1 = np.random.uniform(self.params.min_crop_factor_training, 1, size = (2,)) # on an average cropping factor is 80% i.e. covers 64% area
-            
+
             if not self.params.no_ar_distortion:
                 x0 = np.random.randint(0, (self.ori_reso_w - self.ori_reso_w*cropping_factor1[0]) + 1)
                 if self.params.aspect_ratio_aug:
@@ -161,7 +160,6 @@ class baseline_dataloader_train_strong(Dataset):
             erase_size1 = np.random.randint(int((self.ori_reso_h/6)*(self.params.reso_h/224)),int((self.ori_reso_h/3)*(self.params.reso_h/224)), size = (2,))
             erase_size2 = np.random.randint(int((self.ori_reso_w/6)*(self.params.reso_h/224)),int((self.ori_reso_w/3)*(self.params.reso_h/224)), size = (2,))
             random_color_dropped = np.random.randint(0,3,(2))
-
             while(cap.isOpened()): 
                 count += 1
                 ret, frame = cap.read()
@@ -207,7 +205,7 @@ class baseline_dataloader_train_strong(Dataset):
                 return None, None   
 
         except:
-            # traceback.print_exc()
+            traceback.print_exc()
             print(f'Clip {vid_path} Failed')
             return None, None
 
@@ -417,7 +415,7 @@ class multi_baseline_dataloader_val_strong(Dataset):
         # clip_building
         clip, frame_list = self.build_clip(vid_path1)
 
-        return clip, label, vid_path1, frame_list
+        return clip, label, vid_path1, idx
 
     def build_clip(self, vid_path):
         try:
