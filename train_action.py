@@ -254,16 +254,16 @@ def train_classifier(run_id, arch, saved_model):
 
     # Check if model params need to be summed.
     optimizer = optim.Adam(model.parameters(), lr=params.learning_rate)
-    import params_linear3_2d3d_crop06 as params1
-    # train_dataset = ucf101_ar_dataset(data_split='train', shuffle=False, data_percentage=params.data_percentage_ucf101)
-    train_dataset = baseline_dataloader_train_strong(params=params1, dataset='ucf101', data_percentage=params.data_percentage_ucf101)
-    train_dataloader = DataLoader(train_dataset, batch_size=params.batch_size_ucf101, shuffle=True, num_workers=params.num_workers, collate_fn=collate_fn_train)
+    # import params_linear3_2d3d_crop06 as params1
+    train_dataset = ucf101_ar_dataset(data_split='train', shuffle=False, data_percentage=params.data_percentage_ucf101)
+    # train_dataset = baseline_dataloader_train_strong(params=params1, dataset='ucf101', data_percentage=params.data_percentage_ucf101)
+    train_dataloader = DataLoader(train_dataset, batch_size=params.batch_size_ucf101, shuffle=True, num_workers=params.num_workers)
     print(f'Train dataset length: {len(train_dataset)}')
     print(f'Train dataset steps per epoch: {len(train_dataset)/params.batch_size_ucf101}')
 
-    # validation_dataset = ucf101_ar_dataset(data_split='test', shuffle=True, data_percentage=params.data_percentage_ucf101)
-    validation_dataset = multi_baseline_dataloader_val_strong(params=params1, dataset='ucf101', shuffle=True, data_percentage=params.data_percentage_ucf101)
-    validation_dataloader = DataLoader(validation_dataset, batch_size=params.v_batch_size, shuffle=True, num_workers=params.num_workers, collate_fn=collate_fn2)
+    validation_dataset = ucf101_ar_dataset(data_split='test', shuffle=True, data_percentage=params.data_percentage_ucf101)
+    # validation_dataset = multi_baseline_dataloader_val_strong(params=params1, dataset='ucf101', shuffle=True, data_percentage=params.data_percentage_ucf101)
+    validation_dataloader = DataLoader(validation_dataset, batch_size=params.v_batch_size, shuffle=True, num_workers=params.num_workers)
 
     print(f'Validation dataset length: {len(validation_dataset)}')
     print(f'Validation dataset steps per epoch: {len(validation_dataset)/params.v_batch_size}')
@@ -283,8 +283,8 @@ def train_classifier(run_id, arch, saved_model):
     train_best = 1000
     epoch1 = 1
 
-    modes = list(range(params.num_modes))
-    cropping_facs = params.cropping_fac1
+    # modes = list(range(params.num_modes))
+    # cropping_facs = params.cropping_fac1
 
     learning_rate = params.learning_rate
     for epoch in range(epoch1, params.num_epochs + 1):
@@ -347,24 +347,22 @@ def train_classifier(run_id, arch, saved_model):
 
 
             #         print(f'Running Avg Accuracy is for epoch {epoch}, mode {modes[val_iter]}, is {accuracy11*100 :.3f}% ')  
-                    # if acc1 > best_score:
-                    #     print('++++++++++++++++++++++++++++++')
-                    #     print(f'Epoch {epoch} is the best model till now for {run_id}!')
-                    #     print('++++++++++++++++++++++++++++++')
-                    #     save_dir = os.path.join(cfg.saved_models_dir, run_id)
-                    #     if not os.path.exists(save_dir):
-                    #         os.makedirs(save_dir)
-                    #     save_file_path = os.path.join(save_dir, f'model_{epoch}_bestAcc_{str(acc1)[:6]}.pth')
-                    #     states = {
-                    #         'epoch': epoch + 1,
-                    #         'lr_counter': lr_counter,
-                    #         'model_state_dict': model.state_dict(),
-                    #         'optimizer': optimizer.state_dict()
-                    #     }
-                    #     torch.save(states, save_file_path)
-                    #     best_score = accuracy
-                    # except:
-                    #     print('not working')
+            if acc1 > best_score:
+                print('++++++++++++++++++++++++++++++')
+                print(f'Epoch {epoch} is the best model till now for {run_id}!')
+                print('++++++++++++++++++++++++++++++')
+                save_dir = os.path.join(cfg.saved_models_dir, run_id)
+                if not os.path.exists(save_dir):
+                    os.makedirs(save_dir)
+                save_file_path = os.path.join(save_dir, f'model_{epoch}_bestAcc_{str(acc1)[:6]}.pth')
+                states = {
+                    'epoch': epoch + 1,
+                    'lr_counter': lr_counter,
+                    'model_state_dict': model.state_dict(),
+                    'optimizer': optimizer.state_dict()
+                }
+                torch.save(states, save_file_path)
+                best_score = accuracy
 
         # Temp saving.
         save_dir = os.path.join(cfg.saved_models_dir, run_id)
