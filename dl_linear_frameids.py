@@ -418,7 +418,7 @@ class multi_baseline_dataloader_val_strong(Dataset):
         # clip_building
         clip, frame_list = self.build_clip(vid_path1)
 
-        return clip, label, vid_path1, frame_list
+        return clip, label, vid_path1, idx
 
     def build_clip(self, vid_path):
         try:
@@ -560,12 +560,12 @@ def collate_fn2(batch):
             f_clip.append(torch.stack(item[0],dim=0)) 
             label.append(item[1])
             vid_path.append(item[2])
-            frame_list.append(torch.from_numpy(np.asarray(item[3])))
+            # frame_list.append(torch.from_numpy(np.asarray(item[3])))
             # frame_list.append(torch.from_numpy(np.asarray(list(range(8)))))
-            # frame_list.append(torch.tensor(item[3]))
+            frame_list.append(torch.tensor(item[3]))
 
     f_clip = torch.stack(f_clip, dim=0)
-    frame_list = torch.stack(frame_list, dim=0)
+    # frame_list = torch.stack(frame_list, dim=0)
     
     return f_clip, label, vid_path, frame_list 
             
