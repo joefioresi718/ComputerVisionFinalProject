@@ -381,4 +381,3 @@ if __name__ == '__main__':
             print(f'Label is {label}')
 
     print(f'Time taken to load data is {time.time()-t}')
-

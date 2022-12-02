@@ -53,7 +53,7 @@ def train_epoch(epoch, data_loader, model, criterion, optimizer, writer, use_cud
         optimizer.step()
         losses.append(loss.item())
 
-        if i % 5 == 0: 
+        if i % 50 == 0: 
             print(f'Training Epoch {epoch}, Batch {i}, Loss: {np.mean(losses) :.5f}', flush=True)
     
     print(f'Training Epoch: {epoch}, Loss: {np.mean(losses)}')
@@ -100,7 +100,7 @@ def val_epoch(epoch, data_loader, model, criterion, use_cuda):
             agg_targets[idx] = label[b].detach().item()
         num_processed_samples += videos.shape[0]
 
-        if i % 5 == 0:
+        if i % 50 == 0:
             print(f'Validation Epoch {epoch}, Batch {i} - Loss : {np.mean(losses)}')
         
     del videos, output, label, loss 
