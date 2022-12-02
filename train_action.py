@@ -25,7 +25,7 @@ torch.backends.cudnn.benchmark = True
 
 
 # Training epoch.
-def train_epoch(epoch, data_loader, model, criterion, optimizer, writer, use_cuda, lr):
+def train_epoch(epoch, data_loader, model, criterion, optimizer, writer, use_cuda, lr, arch):
     print(f'Train at epoch {epoch}')
     for param_group in optimizer.param_groups:
         param_group['lr'] = lr
@@ -45,7 +45,9 @@ def train_epoch(epoch, data_loader, model, criterion, optimizer, writer, use_cud
             label = torch.from_numpy(np.asarray(label)).type(torch.LongTensor).cuda()
 
         # Reshape UCF101 inputs.
-        output = model(videos.permute(0, 2, 1, 3, 4))
+        if arch != 'vivit':
+            videos = videos.permute(0, 2, 1, 3, 4)
+        output = model(videos)
 
         # Compute loss.
         loss = criterion(output, label)
@@ -65,7 +67,7 @@ def train_epoch(epoch, data_loader, model, criterion, optimizer, writer, use_cud
 
 
 # Validation epoch.
-def val_epoch(epoch, data_loader, model, criterion, use_cuda):
+def val_epoch(epoch, data_loader, model, criterion, use_cuda, arch):
     print(f'Validation at epoch {epoch}.')
     
     # Set model to evaluation mode.
@@ -86,7 +88,10 @@ def val_epoch(epoch, data_loader, model, criterion, use_cuda):
             label = torch.from_numpy(np.asarray(label)).type(torch.LongTensor).cuda()
 
         with torch.no_grad():
-            output = model(videos.permute(0, 2, 1, 3, 4))
+            # Reshape UCF101 inputs.
+            if arch != 'vivit':
+                videos = videos.permute(0, 2, 1, 3, 4)
+            output = model(videos)
             # Compute loss.
             loss = criterion(output, label)
 
@@ -101,7 +106,7 @@ def val_epoch(epoch, data_loader, model, criterion, use_cuda):
         num_processed_samples += videos.shape[0]
 
         if i % 50 == 0:
-            print(f'Validation Epoch {epoch}, Batch {i} - Loss : {np.mean(losses)}')
+            print(f'Validation Epoch {epoch}, Batch {i} - Loss : {np.mean(losses)}', flush=True)
         
     del videos, output, label, loss 
 
@@ -197,7 +202,7 @@ def train_classifier(run_id, arch, saved_model):
         print(f'Epoch {epoch} started')
         start = time.time()
 
-        model, train_loss = train_epoch(epoch, train_dataloader, model, criterion, optimizer, writer, use_cuda, learning_rate)
+        model, train_loss = train_epoch(epoch, train_dataloader, model, criterion, optimizer, writer, use_cuda, learning_rate, arch)
         
         # Used for lr scheduler.
         if train_loss > train_best:
@@ -216,7 +221,7 @@ def train_classifier(run_id, arch, saved_model):
 
         # Validation epoch.
         if epoch in val_array:
-            acc1, acc5, loss = val_epoch(epoch, validation_dataloader, model, criterion, use_cuda)
+            acc1, acc5, loss = val_epoch(epoch, validation_dataloader, model, criterion, use_cuda, arch)
             writer.add_scalar('Validation Acc@1', acc1, epoch)
             writer.add_scalar('Validation Acc@5', acc5, epoch)
 

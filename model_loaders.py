@@ -66,7 +66,7 @@ def build_videoMAE_classifier(num_classes=params.num_classes, pretrained=True):
 
 # Load default pretrained action recognition model.
 def build_r3d_classifier(num_classes=params.num_classes, pretrained=False):
-    model = r3d_18_classifier(pretrained=pretrained, progress=True)
+    model = r3d_18_classifier(pretrained=pretrained, progress=False)
     # model.layer4[0].conv1[0] = nn.Conv3d(256, 512, kernel_size=(3, 3, 3), stride=(1, 2, 2), padding=(2, 1, 1), dilation=(2,1,1), bias=False)
     # model.layer4[0].downsample[0] = nn.Conv3d(256, 512, kernel_size=(1, 1, 1), stride=(1, 2, 2), bias=False)
     model.fc = nn.Linear(512, num_classes)
@@ -88,7 +88,8 @@ def build_i3d_classifier(num_classes=params.num_classes, pretrained=True):
 
 if __name__ == '__main__':
     inputs = torch.rand((1, 3, 16, 224, 224))
-    model = load_ft_model(arch='i3d', kin_pretrained=True)   
+    inputs = inputs.permute(0, 2, 1, 3, 4)
+    model = load_ft_model(arch='vivit', kin_pretrained=True)   
     with torch.no_grad():
         output = model(inputs)
         # features = model.extract_features(inputs)

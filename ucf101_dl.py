@@ -19,7 +19,8 @@ class ucf101_ar_train_dataset(Dataset):
         self.params = params
         
         if split <= 3:
-            self.all_paths = open(os.path.join(cfg.ucf101_path, f'ucfTrainTestlist/trainlist0{split}.txt'),'r').read().splitlines()
+            all_paths = open(os.path.join(cfg.ucf101_path, 'ucfTrainTestlist', f'trainlist0{split}.txt'),'r').read().splitlines()
+            self.all_paths = [x.replace('/', os.sep) for x in all_paths]
         else:
             print(f'Invalid split input: {split}')
         self.classes = json.load(open(cfg.ucf101_class_mapping))['classes']
@@ -46,7 +47,7 @@ class ucf101_ar_train_dataset(Dataset):
     def process_data(self, idx):
         # Label building.
         vid_path = os.path.join(cfg.ucf101_path, 'Videos', self.data[idx].split(' ')[0])
-        label = self.classes[vid_path.split('/')[-2]]  # This element should be activity name.
+        label = self.classes[vid_path.split(os.sep)[-2]]  # This element should be activity name.
 
         # Clip building.
         clip, frame_list = self.build_clip(vid_path)
@@ -182,7 +183,7 @@ class ucf101_ar_val_dataset(Dataset):
         self.classes = json.load(open(cfg.ucf101_class_mapping))['classes']
 
         if split <= 3:
-            self.all_paths = open(os.path.join(cfg.ucf101_path, f'ucfTrainTestlist/testlist0{split}.txt'),'r').read().splitlines()
+            self.all_paths = open(os.path.join(cfg.ucf101_path, 'ucfTrainTestlist', f'testlist0{split}.txt'),'r').read().splitlines()
         else:
             print(f'Invalid split input: {split}')    
                 
@@ -216,7 +217,7 @@ class ucf101_ar_val_dataset(Dataset):
     def process_data(self, idx):
         # Label building.
         vid_path = os.path.join(cfg.ucf101_path, 'Videos', self.data[idx].split(' ')[0])
-        label = self.classes[vid_path.split('/')[-2]]  # This element should be activity name.
+        label = self.classes[vid_path.split(os.sep)[-2]]  # This element should be activity name.
 
         # Clip building.
         clip, frame_list = self.build_clip(vid_path)
