@@ -183,7 +183,6 @@ def train_classifier(run_id, arch, saved_model):
     print(f'Scheduler patient {params.lr_patience}')
     print(f'Scheduler drop {params.scheduled_drop}')
 
-    accuracy = 0
     lr_flag1 = 0
     lr_counter = 0
     best_score = 0
@@ -236,7 +235,7 @@ def train_classifier(run_id, arch, saved_model):
                     'optimizer': optimizer.state_dict()
                 }
                 torch.save(states, save_file_path)
-                best_score = accuracy
+                best_score = acc1
 
         # Temp saving.
         save_dir = os.path.join(cfg.saved_models_dir, run_id)
