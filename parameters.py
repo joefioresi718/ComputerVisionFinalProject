@@ -33,8 +33,8 @@ RGB = True
 normalize = False
 
 # Training augmentation params.
-reso_h = 112
-reso_w = 112
+reso_h = 224
+reso_w = 224
 ori_reso_h = 240
 ori_reso_w = 320
 min_crop_factor_training = 0.6
