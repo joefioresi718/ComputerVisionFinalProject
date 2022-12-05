@@ -100,7 +100,7 @@ def build_i3d_classifier(num_classes=params.num_classes, pretrained=True):
 if __name__ == '__main__':
     inputs = torch.rand((1, 3, 16, 224, 224))
     inputs = inputs.permute(0, 2, 1, 3, 4)
-    model = load_ft_model(arch='vivit', kin_pretrained=True)   
+    model = load_ft_model(arch='videoMAE', kin_pretrained=True)   
     with torch.no_grad():
         output = model(inputs)
         # features = model.extract_features(inputs)
