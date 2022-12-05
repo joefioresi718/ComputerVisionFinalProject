@@ -54,7 +54,7 @@ def build_vivit_classifier(num_classes=params.num_classes, pretrained=True):
 def build_videoMAE_classifier(num_classes=params.num_classes, pretrained=True, size='base'):
     if size == 'small':
         model = vit_small_patch16_224(num_classes=num_classes)
-    elif size == 'base' or 'ucf101':
+    elif size == 'base' or size == 'ucf101':
         model = vit_base_patch16_224(num_classes=num_classes)
     elif size == 'large':
         model = vit_large_patch16_224(num_classes=num_classes)
