@@ -6,7 +6,7 @@ from torchvision.models import swin_transformer, Swin_B_Weights
 import parameters as params
 from models.r3d import r3d_18_classifier
 from models.vivit import ViViT
-from models.modeling_finetune import vit_base_patch16_224
+from models.modeling_finetune import vit_small_patch16_224, vit_base_patch16_224, vit_large_patch16_224, vit_huge_patch16_224
 from models.i3d import InceptionI3d
 
 
@@ -17,7 +17,7 @@ def load_ft_model(arch='r3d', saved_model_file=None, num_classes=params.num_clas
     elif arch == 'i3d':
         ft_model = build_i3d_classifier(num_classes=num_classes, pretrained=kin_pretrained)
     elif arch == 'videoMAE':
-        ft_model = build_videoMAE_classifier(num_classes=num_classes, pretrained=kin_pretrained)
+        ft_model = build_videoMAE_classifier(num_classes=num_classes, pretrained=kin_pretrained, size=params.transformer_size)
     elif arch == 'vivit':
         ft_model = build_vivit_classifier(num_classes=num_classes, pretrained=kin_pretrained)
     else:
@@ -51,10 +51,21 @@ def build_vivit_classifier(num_classes=params.num_classes, pretrained=True):
 
 
 # Create video MAE classification transformer.
-def build_videoMAE_classifier(num_classes=params.num_classes, pretrained=True):
-    model = vit_base_patch16_224(num_classes=num_classes)
+def build_videoMAE_classifier(num_classes=params.num_classes, pretrained=True, size='base'):
+    if size == 'small':
+        model = vit_small_patch16_224(num_classes=num_classes)
+    elif size == 'base' or 'ucf101':
+        model = vit_base_patch16_224(num_classes=num_classes)
+    elif size == 'large':
+        model = vit_large_patch16_224(num_classes=num_classes)
+    elif size == 'huge':
+        model = vit_huge_patch16_224(num_classes=num_classes)
+    else:
+        print(f'Model size is invalid, please try \"small\", \"base\", or \"huge\".')
+        return None
+
     if pretrained:
-        checkpoint_model = torch.load(os.path.join('saved_models', 'mae_checkpoint.pth'))['module']
+        checkpoint_model = torch.load(os.path.join('saved_models', f'{size}_mae_checkpoint.pth'))['module']
         state_dict = model.state_dict()
         for k in ['head.weight', 'head.bias']:
                 if k in checkpoint_model and checkpoint_model[k].shape != state_dict[k].shape:

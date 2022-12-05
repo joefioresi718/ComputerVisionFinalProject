@@ -8,6 +8,7 @@ fix_skip = 2
 num_modes = 5
 num_skips = 1
 data_percentage = 1.0
+transformer_size = 'small'
 
 ######################
 # Training parameters.
