@@ -28,14 +28,14 @@ def load_ft_model(arch='r3d', saved_model_file=None, num_classes=params.num_clas
     if saved_model_file:
         saved_dict = torch.load(saved_model_file)
         try:
-            model.load_state_dict(saved_dict['ft_model_state_dict'], strict=True)
+            ft_model.load_state_dict(saved_dict['ft_model_state_dict'], strict=True)
         except:
             from collections import OrderedDict
             new_state_dict = OrderedDict()
             for k, v in saved_dict['ft_model_state_dict'].items():
                 name = k[7:]  # Remove 'module.'
                 new_state_dict[name] = v
-            model.load_state_dict(new_state_dict, strict=True)
+            ft_model.load_state_dict(new_state_dict, strict=True)
         print(f'ft_model loaded from {saved_model_file} successsfully!')
     else:
         print(f'ft_model freshly initialized! Pretrained: {kin_pretrained}')
