@@ -1,0 +1,1747 @@
+CUDA_VISIBLE_DEVICES=0
+Fri Dec  2 10:25:01 2022       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 520.61.05    Driver Version: 520.61.05    CUDA Version: 11.8     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Tesla V100-PCIE...  On   | 00000000:5E:00.0 Off |                    0 |
+| N/A   41C    P0    28W / 250W |      0MiB / 32768MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+Run ID: i3dv1
+Architecture: i3d
+np : <module 'numpy' from '/home/joefio/.conda/envs/spad/lib/python3.10/site-packages/numpy/__init__.py'>
+num_classes : 102
+num_frames : 16
+fix_skip : 2
+num_modes : 5
+num_skips : 1
+data_percentage : 1.0
+batch_size : 16
+v_batch_size : 16
+learning_rate : 0.0001
+num_workers : 4
+num_epochs : 100
+warmup_array : [0.010000001, 0.25750000100000003, 0.505000001, 0.7525000009999999, 1.000000001]
+warmup : 5
+scheduled_drop : 2
+lr_patience : 0
+patch_size : 16
+hflip : [0]
+cropping_facs : [0.8]
+RGB : True
+normalize : False
+reso_h : 224
+reso_w : 224
+ori_reso_h : 240
+ori_reso_w : 320
+min_crop_factor_training : 0.6
+wandb : False
+ft_model freshly initialized! Pretrained: True
+Only 1 GPU is available
+Train dataset length: 9537
+Train dataset steps per epoch: 596.0625
+Validation dataset length: 3783
+Validation dataset steps per epoch: 236.4375
+Num skips [1]
+Base learning rate 0.0001
+Scheduler patient 0
+Scheduler drop 2
+Epoch 1 started
+Train at epoch 1
+Learning rate is: 2.5750000100000004e-05
+Training Epoch 1, Batch 0, Loss: 4.61789
+Training Epoch 1, Batch 50, Loss: 4.61727
+Training Epoch 1, Batch 100, Loss: 4.61848
+Training Epoch 1, Batch 150, Loss: 4.60579
+Training Epoch 1, Batch 200, Loss: 4.59103
+Training Epoch 1, Batch 250, Loss: 4.58298
+Training Epoch 1, Batch 300, Loss: 4.57100
+Training Epoch 1, Batch 350, Loss: 4.55768
+Training Epoch 1, Batch 400, Loss: 4.54667
+Training Epoch 1, Batch 450, Loss: 4.53278
+Training Epoch 1, Batch 500, Loss: 4.51908
+Training Epoch 1, Batch 550, Loss: 4.50494
+Clip ../../datasets/UCF101-videos/Videos/SoccerJuggling/v_SoccerJuggling_g24_c07.avi is missing 1 frames.
+Training Epoch: 1, Loss: 4.492810084791839
+Validation at epoch 1.
+Validation Epoch 1, Batch 0 - Loss : 4.398108959197998
+Validation Epoch 1, Batch 50 - Loss : 4.204893341251448
+Validation Epoch 1, Batch 100 - Loss : 4.215239930861067
+Validation Epoch 1, Batch 150 - Loss : 4.213594714537361
+Validation Epoch 1, Batch 200 - Loss : 4.212956912481963
+Total video count: 3783
+Epoch 1, * Video Acc@1 28.165 Video Acc@5 55.222, Loss: 4.216076854915055
+++++++++++++++++++++++++++++++
+Epoch 1 is the best model till now for i3dv1!
+++++++++++++++++++++++++++++++
+Time taken for Epoch-1 is 571.5429465770721
+
+Epoch 2 started
+Train at epoch 2
+Learning rate is: 5.05000001e-05
+Training Epoch 2, Batch 0, Loss: 4.34289
+Training Epoch 2, Batch 50, Loss: 4.28300
+Training Epoch 2, Batch 100, Loss: 4.24015
+Training Epoch 2, Batch 150, Loss: 4.19908
+Training Epoch 2, Batch 200, Loss: 4.16764
+Training Epoch 2, Batch 250, Loss: 4.12437
+Training Epoch 2, Batch 300, Loss: 4.08332
+Training Epoch 2, Batch 350, Loss: 4.03991
+Training Epoch 2, Batch 400, Loss: 3.99466
+Training Epoch 2, Batch 450, Loss: 3.94782
+Training Epoch 2, Batch 500, Loss: 3.90192
+Training Epoch 2, Batch 550, Loss: 3.85600
+Clip ../../datasets/UCF101-videos/Videos/JugglingBalls/v_JugglingBalls_g18_c03.avi is missing 1 frames.
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g16_c06.avi is missing 7 frames.
+[254 256 258 260 262 264 266 268 270 272 274 276 278 280 282 284]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c01.avi Failed
+Clip ../../datasets/UCF101-videos/Videos/TennisSwing/v_TennisSwing_g16_c01.avi is missing 1 frames.
+Training Epoch: 2, Loss: 3.8124716533488363
+Time taken for Epoch-2 is 417.51296877861023
+
+Epoch 3 started
+Train at epoch 3
+Learning rate is: 7.525000009999999e-05
+Training Epoch 3, Batch 0, Loss: 3.49721
+Training Epoch 3, Batch 50, Loss: 3.10161
+Training Epoch 3, Batch 100, Loss: 3.09221
+Training Epoch 3, Batch 150, Loss: 3.03658
+Training Epoch 3, Batch 200, Loss: 2.99368
+Training Epoch 3, Batch 250, Loss: 2.93657
+Training Epoch 3, Batch 300, Loss: 2.88976
+Training Epoch 3, Batch 350, Loss: 2.83778
+Training Epoch 3, Batch 400, Loss: 2.79629
+Training Epoch 3, Batch 450, Loss: 2.75498
+Training Epoch 3, Batch 500, Loss: 2.70424
+Training Epoch 3, Batch 550, Loss: 2.65222
+Training Epoch: 3, Loss: 2.6093774161346794
+Validation at epoch 3.
+Validation Epoch 3, Batch 0 - Loss : 1.0573134422302246
+Validation Epoch 3, Batch 50 - Loss : 1.675557398328594
+Validation Epoch 3, Batch 100 - Loss : 1.70347532541445
+Validation Epoch 3, Batch 150 - Loss : 1.6932631952083663
+Validation Epoch 3, Batch 200 - Loss : 1.70301652013959
+Total video count: 3783
+Epoch 3, * Video Acc@1 71.967 Video Acc@5 93.987, Loss: 1.7068827620035485
+++++++++++++++++++++++++++++++
+Epoch 3 is the best model till now for i3dv1!
+++++++++++++++++++++++++++++++
+Time taken for Epoch-3 is 567.5571238994598
+
+Epoch 4 started
+Train at epoch 4
+Learning rate is: 0.00010000000010000001
+Training Epoch 4, Batch 0, Loss: 2.32033
+Training Epoch 4, Batch 50, Loss: 2.03203
+Training Epoch 4, Batch 100, Loss: 1.96698
+Training Epoch 4, Batch 150, Loss: 1.92036
+Training Epoch 4, Batch 200, Loss: 1.86788
+Training Epoch 4, Batch 250, Loss: 1.82546
+Training Epoch 4, Batch 300, Loss: 1.77565
+Training Epoch 4, Batch 350, Loss: 1.73114
+Training Epoch 4, Batch 400, Loss: 1.69184
+Training Epoch 4, Batch 450, Loss: 1.66040
+Training Epoch 4, Batch 500, Loss: 1.62711
+Training Epoch 4, Batch 550, Loss: 1.59177
+Clip ../../datasets/UCF101-videos/Videos/SoccerJuggling/v_SoccerJuggling_g12_c03.avi is missing 2 frames.
+[490 492 494 496 498 500 502 504 506 508 510 512 514 516 518 520]
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g16_c01.avi Failed
+Training Epoch: 4, Loss: 1.5596702040939074
+Time taken for Epoch-4 is 422.84787797927856
+
+Epoch 5 started
+Train at epoch 5
+Learning rate is: 0.00010000000010000001
+Training Epoch 5, Batch 0, Loss: 1.31022
+Training Epoch 5, Batch 50, Loss: 1.13684
+Training Epoch 5, Batch 100, Loss: 1.11157
+Training Epoch 5, Batch 150, Loss: 1.07751
+Training Epoch 5, Batch 200, Loss: 1.05410
+Training Epoch 5, Batch 250, Loss: 1.04242
+Training Epoch 5, Batch 300, Loss: 1.03079
+Training Epoch 5, Batch 350, Loss: 1.01199
+Training Epoch 5, Batch 400, Loss: 0.98949
+Training Epoch 5, Batch 450, Loss: 0.97542
+Training Epoch 5, Batch 500, Loss: 0.95692
+Training Epoch 5, Batch 550, Loss: 0.94222
+Clip ../../datasets/UCF101-videos/Videos/JugglingBalls/v_JugglingBalls_g18_c04.avi is missing 3 frames.
+Training Epoch: 5, Loss: 0.9364415228965893
+Validation at epoch 5.
+Validation Epoch 5, Batch 0 - Loss : 0.8306353092193604
+Validation Epoch 5, Batch 50 - Loss : 0.6641906453113929
+Validation Epoch 5, Batch 100 - Loss : 0.6793564705565425
+Validation Epoch 5, Batch 150 - Loss : 0.7072334330997719
+Validation Epoch 5, Batch 200 - Loss : 0.7020824096392636
+Total video count: 3783
+Epoch 5, * Video Acc@1 83.571 Video Acc@5 97.442, Loss: 0.7054825259160392
+++++++++++++++++++++++++++++++
+Epoch 5 is the best model till now for i3dv1!
+++++++++++++++++++++++++++++++
+Time taken for Epoch-5 is 557.54172706604
+
+Epoch 6 started
+Train at epoch 6
+Learning rate is: 0.00010000000010000001
+Training Epoch 6, Batch 0, Loss: 0.68575
+Training Epoch 6, Batch 50, Loss: 0.76085
+Training Epoch 6, Batch 100, Loss: 0.74376
+Training Epoch 6, Batch 150, Loss: 0.72596
+Training Epoch 6, Batch 200, Loss: 0.70671
+Training Epoch 6, Batch 250, Loss: 0.69361
+Training Epoch 6, Batch 300, Loss: 0.68383
+Training Epoch 6, Batch 350, Loss: 0.67344
+Training Epoch 6, Batch 400, Loss: 0.66675
+Training Epoch 6, Batch 450, Loss: 0.65809
+Training Epoch 6, Batch 500, Loss: 0.65210
+Training Epoch 6, Batch 550, Loss: 0.64943
+[292 294 296 298 300 302 304 306 308 310 312 314 316 318 320 322]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c03.avi Failed
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g16_c04.avi is missing 1 frames.
+Training Epoch: 6, Loss: 0.650696098455033
+Time taken for Epoch-6 is 427.6309597492218
+
+Epoch 7 started
+Train at epoch 7
+Learning rate is: 0.00010000000010000001
+Training Epoch 7, Batch 0, Loss: 0.46643
+Training Epoch 7, Batch 50, Loss: 0.51308
+Training Epoch 7, Batch 100, Loss: 0.50149
+Training Epoch 7, Batch 150, Loss: 0.51472
+Training Epoch 7, Batch 200, Loss: 0.50844
+Training Epoch 7, Batch 250, Loss: 0.49693
+Training Epoch 7, Batch 300, Loss: 0.48924
+Training Epoch 7, Batch 350, Loss: 0.48439
+Training Epoch 7, Batch 400, Loss: 0.48690
+Training Epoch 7, Batch 450, Loss: 0.48061
+Training Epoch 7, Batch 500, Loss: 0.47632
+Training Epoch 7, Batch 550, Loss: 0.47164
+Training Epoch: 7, Loss: 0.4750385209418821
+Time taken for Epoch-7 is 421.8681592941284
+
+Epoch 8 started
+Train at epoch 8
+Learning rate is: 0.00010000000010000001
+Training Epoch 8, Batch 0, Loss: 0.44129
+Training Epoch 8, Batch 50, Loss: 0.34975
+Training Epoch 8, Batch 100, Loss: 0.38592
+Training Epoch 8, Batch 150, Loss: 0.39089
+Training Epoch 8, Batch 200, Loss: 0.38241
+Training Epoch 8, Batch 250, Loss: 0.37506
+Training Epoch 8, Batch 300, Loss: 0.37431
+Training Epoch 8, Batch 350, Loss: 0.37178
+Training Epoch 8, Batch 400, Loss: 0.37401
+Training Epoch 8, Batch 450, Loss: 0.36803
+Training Epoch 8, Batch 500, Loss: 0.36354
+Training Epoch 8, Batch 550, Loss: 0.36068
+Clip ../../datasets/UCF101-videos/Videos/VolleyballSpiking/v_VolleyballSpiking_g23_c03.avi is missing 1 frames.
+Training Epoch: 8, Loss: 0.36436210167118455
+Time taken for Epoch-8 is 418.55457830429077
+
+Epoch 9 started
+Train at epoch 9
+Learning rate is: 0.00010000000010000001
+Training Epoch 9, Batch 0, Loss: 0.15522
+Training Epoch 9, Batch 50, Loss: 0.31308
+Training Epoch 9, Batch 100, Loss: 0.31842
+Training Epoch 9, Batch 150, Loss: 0.30838
+Training Epoch 9, Batch 200, Loss: 0.30612
+Training Epoch 9, Batch 250, Loss: 0.29910
+Training Epoch 9, Batch 300, Loss: 0.29952
+Training Epoch 9, Batch 350, Loss: 0.29365
+Training Epoch 9, Batch 400, Loss: 0.29399
+Training Epoch 9, Batch 450, Loss: 0.28824
+Training Epoch 9, Batch 500, Loss: 0.28665
+Training Epoch 9, Batch 550, Loss: 0.28576
+Clip ../../datasets/UCF101-videos/Videos/SoccerJuggling/v_SoccerJuggling_g16_c01.avi is missing 2 frames.
+Training Epoch: 9, Loss: 0.29417221879015615
+Time taken for Epoch-9 is 429.7955982685089
+
+Epoch 10 started
+Train at epoch 10
+Learning rate is: 0.00010000000010000001
+Training Epoch 10, Batch 0, Loss: 0.29473
+Training Epoch 10, Batch 50, Loss: 0.23282
+Training Epoch 10, Batch 100, Loss: 0.23864
+Training Epoch 10, Batch 150, Loss: 0.25637
+Training Epoch 10, Batch 200, Loss: 0.25391
+Training Epoch 10, Batch 250, Loss: 0.25162
+Training Epoch 10, Batch 300, Loss: 0.24674
+Training Epoch 10, Batch 350, Loss: 0.24527
+Training Epoch 10, Batch 400, Loss: 0.24367
+Training Epoch 10, Batch 450, Loss: 0.24216
+Training Epoch 10, Batch 500, Loss: 0.24098
+Training Epoch 10, Batch 550, Loss: 0.23801
+Training Epoch: 10, Loss: 0.24736172470640097
+Validation at epoch 10.
+Validation Epoch 10, Batch 0 - Loss : 0.24548685550689697
+Validation Epoch 10, Batch 50 - Loss : 0.4006512002179436
+Validation Epoch 10, Batch 100 - Loss : 0.3975510954266728
+Validation Epoch 10, Batch 150 - Loss : 0.40807498836063394
+Validation Epoch 10, Batch 200 - Loss : 0.41754819834558526
+Total video count: 3783
+Epoch 10, * Video Acc@1 87.157 Video Acc@5 97.969, Loss: 0.4246473889562148
+++++++++++++++++++++++++++++++
+Epoch 10 is the best model till now for i3dv1!
+++++++++++++++++++++++++++++++
+Time taken for Epoch-10 is 598.4977877140045
+
+Epoch 11 started
+Train at epoch 11
+Learning rate is: 0.00010000000010000001
+Training Epoch 11, Batch 0, Loss: 0.40667
+Training Epoch 11, Batch 50, Loss: 0.23043
+Training Epoch 11, Batch 100, Loss: 0.22546
+Training Epoch 11, Batch 150, Loss: 0.23033
+Training Epoch 11, Batch 200, Loss: 0.22409
+Training Epoch 11, Batch 250, Loss: 0.21859
+Training Epoch 11, Batch 300, Loss: 0.21664
+Training Epoch 11, Batch 350, Loss: 0.21295
+Training Epoch 11, Batch 400, Loss: 0.21182
+Training Epoch 11, Batch 450, Loss: 0.21105
+Training Epoch 11, Batch 500, Loss: 0.21025
+Training Epoch 11, Batch 550, Loss: 0.21029
+Clip ../../datasets/UCF101-videos/Videos/TennisSwing/v_TennisSwing_g16_c04.avi is missing 1 frames.
+Training Epoch: 11, Loss: 0.21632744662675826
+Time taken for Epoch-11 is 457.8346335887909
+
+Epoch 12 started
+Train at epoch 12
+Learning rate is: 0.00010000000010000001
+Training Epoch 12, Batch 0, Loss: 0.13299
+Training Epoch 12, Batch 50, Loss: 0.19314
+Training Epoch 12, Batch 100, Loss: 0.19309
+Training Epoch 12, Batch 150, Loss: 0.18785
+Training Epoch 12, Batch 200, Loss: 0.18476
+Training Epoch 12, Batch 250, Loss: 0.18416
+Training Epoch 12, Batch 300, Loss: 0.18151
+Training Epoch 12, Batch 350, Loss: 0.18582
+Training Epoch 12, Batch 400, Loss: 0.18624
+Training Epoch 12, Batch 450, Loss: 0.18287
+Training Epoch 12, Batch 500, Loss: 0.18067
+Training Epoch 12, Batch 550, Loss: 0.17807
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g16_c04.avi is missing 1 frames.
+Training Epoch: 12, Loss: 0.1873361341892375
+Time taken for Epoch-12 is 447.095929145813
+
+Epoch 13 started
+Train at epoch 13
+Learning rate is: 0.00010000000010000001
+Training Epoch 13, Batch 0, Loss: 0.11314
+Training Epoch 13, Batch 50, Loss: 0.15536
+Training Epoch 13, Batch 100, Loss: 0.15157
+Training Epoch 13, Batch 150, Loss: 0.14897
+Training Epoch 13, Batch 200, Loss: 0.15581
+Training Epoch 13, Batch 250, Loss: 0.15403
+Training Epoch 13, Batch 300, Loss: 0.15232
+Training Epoch 13, Batch 350, Loss: 0.15529
+Training Epoch 13, Batch 400, Loss: 0.15765
+Training Epoch 13, Batch 450, Loss: 0.15703
+Training Epoch 13, Batch 500, Loss: 0.15465
+Training Epoch 13, Batch 550, Loss: 0.15467
+Training Epoch: 13, Loss: 0.16545271320764593
+Time taken for Epoch-13 is 450.1607406139374
+
+Epoch 14 started
+Train at epoch 14
+Learning rate is: 0.00010000000010000001
+Training Epoch 14, Batch 0, Loss: 0.07793
+Training Epoch 14, Batch 50, Loss: 0.15387
+Training Epoch 14, Batch 100, Loss: 0.14296
+Training Epoch 14, Batch 150, Loss: 0.13147
+Training Epoch 14, Batch 200, Loss: 0.13716
+Training Epoch 14, Batch 250, Loss: 0.13715
+Training Epoch 14, Batch 300, Loss: 0.13784
+Training Epoch 14, Batch 350, Loss: 0.14069
+Training Epoch 14, Batch 400, Loss: 0.13838
+Training Epoch 14, Batch 450, Loss: 0.13708
+Training Epoch 14, Batch 500, Loss: 0.13906
+Training Epoch 14, Batch 550, Loss: 0.14105
+Training Epoch: 14, Loss: 0.1495817146034696
+Time taken for Epoch-14 is 420.36871552467346
+
+Epoch 15 started
+Train at epoch 15
+Learning rate is: 0.00010000000010000001
+Training Epoch 15, Batch 0, Loss: 0.10874
+Training Epoch 15, Batch 50, Loss: 0.11701
+Training Epoch 15, Batch 100, Loss: 0.12152
+Training Epoch 15, Batch 150, Loss: 0.11678
+Training Epoch 15, Batch 200, Loss: 0.11731
+Training Epoch 15, Batch 250, Loss: 0.12038
+Training Epoch 15, Batch 300, Loss: 0.11830
+Training Epoch 15, Batch 350, Loss: 0.11925
+Training Epoch 15, Batch 400, Loss: 0.12054
+Training Epoch 15, Batch 450, Loss: 0.12008
+Training Epoch 15, Batch 500, Loss: 0.12079
+Training Epoch 15, Batch 550, Loss: 0.11972
+[286 288 290 292 294 296 298 300 302 304 306 308 310 312 314 316]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c03.avi Failed
+Clip ../../datasets/UCF101-videos/Videos/JugglingBalls/v_JugglingBalls_g18_c02.avi is missing 2 frames.
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g16_c06.avi is missing 4 frames.
+Training Epoch: 15, Loss: 0.1279231379295339
+Time taken for Epoch-15 is 412.0518732070923
+
+Epoch 16 started
+Train at epoch 16
+Learning rate is: 0.00010000000010000001
+Training Epoch 16, Batch 0, Loss: 0.05466
+Training Epoch 16, Batch 50, Loss: 0.11511
+Training Epoch 16, Batch 100, Loss: 0.12217
+Training Epoch 16, Batch 150, Loss: 0.11715
+Training Epoch 16, Batch 200, Loss: 0.11164
+Training Epoch 16, Batch 250, Loss: 0.11287
+Training Epoch 16, Batch 300, Loss: 0.11243
+Training Epoch 16, Batch 350, Loss: 0.11213
+Training Epoch 16, Batch 400, Loss: 0.11253
+Training Epoch 16, Batch 450, Loss: 0.11280
+Training Epoch 16, Batch 500, Loss: 0.11042
+Training Epoch 16, Batch 550, Loss: 0.11018
+Clip ../../datasets/UCF101-videos/Videos/TennisSwing/v_TennisSwing_g16_c04.avi is missing 3 frames.
+Training Epoch: 16, Loss: 0.12128464194947551
+Time taken for Epoch-16 is 414.92761158943176
+
+Epoch 17 started
+Train at epoch 17
+Learning rate is: 0.00010000000010000001
+Training Epoch 17, Batch 0, Loss: 0.04609
+Training Epoch 17, Batch 50, Loss: 0.13201
+Training Epoch 17, Batch 100, Loss: 0.12320
+Training Epoch 17, Batch 150, Loss: 0.12045
+Training Epoch 17, Batch 200, Loss: 0.11676
+Training Epoch 17, Batch 250, Loss: 0.11798
+Training Epoch 17, Batch 300, Loss: 0.11954
+Training Epoch 17, Batch 350, Loss: 0.11758
+Training Epoch 17, Batch 400, Loss: 0.11423
+Training Epoch 17, Batch 450, Loss: 0.11340
+Training Epoch 17, Batch 500, Loss: 0.11151
+Training Epoch 17, Batch 550, Loss: 0.11115
+[254 256 258 260 262 264 266 268 270 272 274 276 278 280 282 284]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c01.avi Failed
+Training Epoch: 17, Loss: 0.12016327987882111
+Time taken for Epoch-17 is 421.2507927417755
+
+Epoch 18 started
+Train at epoch 18
+Learning rate is: 0.00010000000010000001
+Training Epoch 18, Batch 0, Loss: 0.02789
+Training Epoch 18, Batch 50, Loss: 0.09929
+Training Epoch 18, Batch 100, Loss: 0.09881
+Training Epoch 18, Batch 150, Loss: 0.10207
+Training Epoch 18, Batch 200, Loss: 0.09926
+Training Epoch 18, Batch 250, Loss: 0.09951
+Training Epoch 18, Batch 300, Loss: 0.09953
+Training Epoch 18, Batch 350, Loss: 0.10007
+Training Epoch 18, Batch 400, Loss: 0.10075
+Training Epoch 18, Batch 450, Loss: 0.10056
+Training Epoch 18, Batch 500, Loss: 0.09840
+Training Epoch 18, Batch 550, Loss: 0.09787
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c02.avi is missing 5 frames.
+Training Epoch: 18, Loss: 0.10935411060430185
+Time taken for Epoch-18 is 419.8039996623993
+
+Epoch 19 started
+Train at epoch 19
+Learning rate is: 0.00010000000010000001
+Training Epoch 19, Batch 0, Loss: 0.01477
+Training Epoch 19, Batch 50, Loss: 0.08317
+Training Epoch 19, Batch 100, Loss: 0.07694
+Training Epoch 19, Batch 150, Loss: 0.07807
+Training Epoch 19, Batch 200, Loss: 0.08175
+Training Epoch 19, Batch 250, Loss: 0.08674
+Training Epoch 19, Batch 300, Loss: 0.09041
+Training Epoch 19, Batch 350, Loss: 0.09360
+Training Epoch 19, Batch 400, Loss: 0.09597
+Training Epoch 19, Batch 450, Loss: 0.09525
+Training Epoch 19, Batch 500, Loss: 0.09640
+Training Epoch 19, Batch 550, Loss: 0.09657
+Training Epoch: 19, Loss: 0.10617552901122101
+Time taken for Epoch-19 is 414.68371534347534
+
+Epoch 20 started
+Train at epoch 20
+Learning rate is: 0.00010000000010000001
+Training Epoch 20, Batch 0, Loss: 0.10586
+Training Epoch 20, Batch 50, Loss: 0.11730
+Training Epoch 20, Batch 100, Loss: 0.09655
+Training Epoch 20, Batch 150, Loss: 0.09821
+Training Epoch 20, Batch 200, Loss: 0.09641
+Training Epoch 20, Batch 250, Loss: 0.09502
+Training Epoch 20, Batch 300, Loss: 0.09365
+Training Epoch 20, Batch 350, Loss: 0.09756
+Training Epoch 20, Batch 400, Loss: 0.09511
+Training Epoch 20, Batch 450, Loss: 0.09344
+Training Epoch 20, Batch 500, Loss: 0.09128
+Training Epoch 20, Batch 550, Loss: 0.08934
+Training Epoch: 20, Loss: 0.09480366298392215
+Validation at epoch 20.
+Validation Epoch 20, Batch 0 - Loss : 0.7963603138923645
+Validation Epoch 20, Batch 50 - Loss : 0.3634764432322745
+Validation Epoch 20, Batch 100 - Loss : 0.37912276283939284
+Validation Epoch 20, Batch 150 - Loss : 0.37394416400089564
+Validation Epoch 20, Batch 200 - Loss : 0.3832586453208209
+Total video count: 3783
+Epoch 20, * Video Acc@1 88.924 Video Acc@5 98.180, Loss: 0.3868146832945918
+++++++++++++++++++++++++++++++
+Epoch 20 is the best model till now for i3dv1!
+++++++++++++++++++++++++++++++
+Time taken for Epoch-20 is 554.9044649600983
+
+Epoch 21 started
+Train at epoch 21
+Learning rate is: 0.00010000000010000001
+Training Epoch 21, Batch 0, Loss: 0.01077
+Training Epoch 21, Batch 50, Loss: 0.07613
+Training Epoch 21, Batch 100, Loss: 0.07704
+Training Epoch 21, Batch 150, Loss: 0.08322
+Training Epoch 21, Batch 200, Loss: 0.08805
+Training Epoch 21, Batch 250, Loss: 0.08690
+Training Epoch 21, Batch 300, Loss: 0.09193
+Training Epoch 21, Batch 350, Loss: 0.09110
+Training Epoch 21, Batch 400, Loss: 0.08875
+Training Epoch 21, Batch 450, Loss: 0.08781
+Training Epoch 21, Batch 500, Loss: 0.08941
+Training Epoch 21, Batch 550, Loss: 0.08801
+Training Epoch: 21, Loss: 0.09255561642379967
+Time taken for Epoch-21 is 419.78380393981934
+
+Epoch 22 started
+Train at epoch 22
+Learning rate is: 0.00010000000010000001
+Training Epoch 22, Batch 0, Loss: 0.03705
+Training Epoch 22, Batch 50, Loss: 0.08493
+Training Epoch 22, Batch 100, Loss: 0.08099
+Training Epoch 22, Batch 150, Loss: 0.07910
+Training Epoch 22, Batch 200, Loss: 0.08311
+Training Epoch 22, Batch 250, Loss: 0.08084
+Training Epoch 22, Batch 300, Loss: 0.08048
+Training Epoch 22, Batch 350, Loss: 0.08357
+Training Epoch 22, Batch 400, Loss: 0.08100
+Training Epoch 22, Batch 450, Loss: 0.08245
+Training Epoch 22, Batch 500, Loss: 0.08431
+Training Epoch 22, Batch 550, Loss: 0.08376
+Clip ../../datasets/UCF101-videos/Videos/JumpingJack/v_JumpingJack_g20_c01.avi is missing 1 frames.
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g16_c05.avi is missing 1 frames.
+Training Epoch: 22, Loss: 0.09220634387038536
+Time taken for Epoch-22 is 424.2021565437317
+
+Epoch 23 started
+Train at epoch 23
+Learning rate is: 0.00010000000010000001
+Training Epoch 23, Batch 0, Loss: 0.17704
+Training Epoch 23, Batch 50, Loss: 0.10507
+Training Epoch 23, Batch 100, Loss: 0.08820
+Training Epoch 23, Batch 150, Loss: 0.08208
+Training Epoch 23, Batch 200, Loss: 0.08116
+Training Epoch 23, Batch 250, Loss: 0.08022
+Training Epoch 23, Batch 300, Loss: 0.08023
+Training Epoch 23, Batch 350, Loss: 0.07666
+Training Epoch 23, Batch 400, Loss: 0.07733
+Training Epoch 23, Batch 450, Loss: 0.07931
+Training Epoch 23, Batch 500, Loss: 0.08011
+Training Epoch 23, Batch 550, Loss: 0.07943
+Clip ../../datasets/UCF101-videos/Videos/TennisSwing/v_TennisSwing_g16_c04.avi is missing 2 frames.
+Training Epoch: 23, Loss: 0.08667935125964227
+Time taken for Epoch-23 is 425.9555163383484
+
+Epoch 24 started
+Train at epoch 24
+Learning rate is: 0.00010000000010000001
+Training Epoch 24, Batch 0, Loss: 0.01576
+Training Epoch 24, Batch 50, Loss: 0.07512
+Training Epoch 24, Batch 100, Loss: 0.07068
+Training Epoch 24, Batch 150, Loss: 0.06964
+Training Epoch 24, Batch 200, Loss: 0.07247
+Training Epoch 24, Batch 250, Loss: 0.07368
+Training Epoch 24, Batch 300, Loss: 0.07532
+Training Epoch 24, Batch 350, Loss: 0.07626
+Training Epoch 24, Batch 400, Loss: 0.07470
+Training Epoch 24, Batch 450, Loss: 0.07660
+Training Epoch 24, Batch 500, Loss: 0.07605
+Training Epoch 24, Batch 550, Loss: 0.07691
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c03.avi is missing 1 frames.
+Training Epoch: 24, Loss: 0.08433496423332423
+Time taken for Epoch-24 is 429.08713698387146
+
+Epoch 25 started
+Train at epoch 25
+Learning rate is: 0.00010000000010000001
+Training Epoch 25, Batch 0, Loss: 0.01099
+Training Epoch 25, Batch 50, Loss: 0.06970
+Training Epoch 25, Batch 100, Loss: 0.08325
+Training Epoch 25, Batch 150, Loss: 0.07870
+Training Epoch 25, Batch 200, Loss: 0.07472
+Training Epoch 25, Batch 250, Loss: 0.07521
+Training Epoch 25, Batch 300, Loss: 0.07329
+Training Epoch 25, Batch 350, Loss: 0.07708
+Training Epoch 25, Batch 400, Loss: 0.07657
+Training Epoch 25, Batch 450, Loss: 0.07582
+Training Epoch 25, Batch 500, Loss: 0.07569
+Training Epoch 25, Batch 550, Loss: 0.07452
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c02.avi is missing 3 frames.
+Clip ../../datasets/UCF101-videos/Videos/SoccerJuggling/v_SoccerJuggling_g12_c03.avi is missing 3 frames.
+Training Epoch: 25, Loss: 0.08072798593664757
+Validation at epoch 25.
+Validation Epoch 25, Batch 0 - Loss : 0.34330466389656067
+Validation Epoch 25, Batch 50 - Loss : 0.4201934194082723
+Validation Epoch 25, Batch 100 - Loss : 0.4289332523499385
+Validation Epoch 25, Batch 150 - Loss : 0.4221722340050912
+Validation Epoch 25, Batch 200 - Loss : 0.42491810523038404
+Total video count: 3783
+Epoch 25, * Video Acc@1 88.423 Video Acc@5 98.022, Loss: 0.4163336713193181
+Time taken for Epoch-25 is 567.0519235134125
+
+Epoch 26 started
+Train at epoch 26
+Learning rate is: 0.00010000000010000001
+Training Epoch 26, Batch 0, Loss: 0.02174
+Training Epoch 26, Batch 50, Loss: 0.05823
+Training Epoch 26, Batch 100, Loss: 0.07064
+Training Epoch 26, Batch 150, Loss: 0.06965
+Training Epoch 26, Batch 200, Loss: 0.07066
+Training Epoch 26, Batch 250, Loss: 0.06813
+Training Epoch 26, Batch 300, Loss: 0.06728
+Training Epoch 26, Batch 350, Loss: 0.06484
+Training Epoch 26, Batch 400, Loss: 0.06530
+Training Epoch 26, Batch 450, Loss: 0.06482
+Training Epoch 26, Batch 500, Loss: 0.06497
+Training Epoch 26, Batch 550, Loss: 0.06629
+Training Epoch: 26, Loss: 0.07486489702911557
+Time taken for Epoch-26 is 427.23237204551697
+
+Epoch 27 started
+Train at epoch 27
+Learning rate is: 0.00010000000010000001
+Training Epoch 27, Batch 0, Loss: 0.42963
+Training Epoch 27, Batch 50, Loss: 0.07240
+Training Epoch 27, Batch 100, Loss: 0.08232
+Training Epoch 27, Batch 150, Loss: 0.06997
+Training Epoch 27, Batch 200, Loss: 0.07198
+Training Epoch 27, Batch 250, Loss: 0.06930
+Training Epoch 27, Batch 300, Loss: 0.06813
+Training Epoch 27, Batch 350, Loss: 0.06917
+Training Epoch 27, Batch 400, Loss: 0.06838
+Training Epoch 27, Batch 450, Loss: 0.06926
+Training Epoch 27, Batch 500, Loss: 0.06830
+Training Epoch 27, Batch 550, Loss: 0.06766
+Clip ../../datasets/UCF101-videos/Videos/JumpRope/v_JumpRope_g17_c01.avi is missing 3 frames.
+[232 234 236 238 240 242 244 246 248 250 252 254 256 258 260 262]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c02.avi Failed
+Training Epoch: 27, Loss: 0.07622795870353685
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Learning rate dropping to its 2th value to 5.0000000050000005e-05 at epoch 27
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Time taken for Epoch-27 is 421.21022486686707
+
+Epoch 28 started
+Train at epoch 28
+Learning rate is: 5.0000000050000005e-05
+Training Epoch 28, Batch 0, Loss: 0.01294
+Training Epoch 28, Batch 50, Loss: 0.08015
+Training Epoch 28, Batch 100, Loss: 0.06489
+Training Epoch 28, Batch 150, Loss: 0.06046
+Training Epoch 28, Batch 200, Loss: 0.05971
+Training Epoch 28, Batch 250, Loss: 0.05673
+Training Epoch 28, Batch 300, Loss: 0.05618
+Training Epoch 28, Batch 350, Loss: 0.05532
+Training Epoch 28, Batch 400, Loss: 0.05549
+Training Epoch 28, Batch 450, Loss: 0.05498
+Training Epoch 28, Batch 500, Loss: 0.05456
+Training Epoch 28, Batch 550, Loss: 0.05506
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g16_c02.avi is missing 7 frames.
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g16_c05.avi is missing 2 frames.
+Training Epoch: 28, Loss: 0.06290219928129379
+Time taken for Epoch-28 is 425.4808442592621
+
+Epoch 29 started
+Train at epoch 29
+Learning rate is: 5.0000000050000005e-05
+Training Epoch 29, Batch 0, Loss: 0.00377
+Training Epoch 29, Batch 50, Loss: 0.05042
+Training Epoch 29, Batch 100, Loss: 0.04879
+Training Epoch 29, Batch 150, Loss: 0.04694
+Training Epoch 29, Batch 200, Loss: 0.05146
+Training Epoch 29, Batch 250, Loss: 0.05423
+Training Epoch 29, Batch 300, Loss: 0.05341
+Training Epoch 29, Batch 350, Loss: 0.05196
+Training Epoch 29, Batch 400, Loss: 0.05082
+Training Epoch 29, Batch 450, Loss: 0.05517
+Training Epoch 29, Batch 500, Loss: 0.05325
+Training Epoch 29, Batch 550, Loss: 0.05191
+[470 472 474 476 478 480 482 484 486 488 490 492 494 496 498 500]
+Clip ../../datasets/UCF101-videos/Videos/PoleVault/v_PoleVault_g14_c04.avi Failed
+Clip ../../datasets/UCF101-videos/Videos/JugglingBalls/v_JugglingBalls_g18_c04.avi is missing 1 frames.
+[267 269 271 273 275 277 279 281 283 285 287 289 291 293 295 297]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c02.avi Failed
+Training Epoch: 29, Loss: 0.061369555441302306
+Time taken for Epoch-29 is 412.2130033969879
+
+Epoch 30 started
+Train at epoch 30
+Learning rate is: 5.0000000050000005e-05
+Training Epoch 30, Batch 0, Loss: 0.02538
+Training Epoch 30, Batch 50, Loss: 0.05384
+Training Epoch 30, Batch 100, Loss: 0.05409
+Training Epoch 30, Batch 150, Loss: 0.04988
+Training Epoch 30, Batch 200, Loss: 0.05266
+Training Epoch 30, Batch 250, Loss: 0.05023
+Training Epoch 30, Batch 300, Loss: 0.05279
+Training Epoch 30, Batch 350, Loss: 0.05304
+Training Epoch 30, Batch 400, Loss: 0.05149
+Training Epoch 30, Batch 450, Loss: 0.05009
+Training Epoch 30, Batch 500, Loss: 0.05083
+Training Epoch 30, Batch 550, Loss: 0.05177
+[246 248 250 252 254 256 258 260 262 264 266 268 270 272 274 276]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c02.avi Failed
+Clip ../../datasets/UCF101-videos/Videos/TennisSwing/v_TennisSwing_g09_c04.avi is missing 1 frames.
+[256 258 260 262 264 266 268 270 272 274 276 278 280 282 284 286]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c01.avi Failed
+Training Epoch: 30, Loss: 0.061060609926498484
+Validation at epoch 30.
+Validation Epoch 30, Batch 0 - Loss : 0.5104007124900818
+Validation Epoch 30, Batch 50 - Loss : 0.4157534217206286
+Validation Epoch 30, Batch 100 - Loss : 0.39948333777708583
+Validation Epoch 30, Batch 150 - Loss : 0.3881126943611793
+Validation Epoch 30, Batch 200 - Loss : 0.3835703109585638
+Total video count: 3783
+Epoch 30, * Video Acc@1 89.320 Video Acc@5 97.864, Loss: 0.38373592948415297
+++++++++++++++++++++++++++++++
+Epoch 30 is the best model till now for i3dv1!
+++++++++++++++++++++++++++++++
+Time taken for Epoch-30 is 555.3194060325623
+
+Epoch 31 started
+Train at epoch 31
+Learning rate is: 5.0000000050000005e-05
+Training Epoch 31, Batch 0, Loss: 0.08809
+Training Epoch 31, Batch 50, Loss: 0.04355
+Training Epoch 31, Batch 100, Loss: 0.04255
+Training Epoch 31, Batch 150, Loss: 0.05458
+Training Epoch 31, Batch 200, Loss: 0.05330
+Training Epoch 31, Batch 250, Loss: 0.05200
+Training Epoch 31, Batch 300, Loss: 0.05051
+Training Epoch 31, Batch 350, Loss: 0.05149
+Training Epoch 31, Batch 400, Loss: 0.05085
+Training Epoch 31, Batch 450, Loss: 0.05000
+Training Epoch 31, Batch 500, Loss: 0.04954
+Training Epoch 31, Batch 550, Loss: 0.05040
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g16_c05.avi is missing 3 frames.
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c01.avi is missing 7 frames.
+Clip ../../datasets/UCF101-videos/Videos/PoleVault/v_PoleVault_g14_c04.avi is missing 7 frames.
+Clip ../../datasets/UCF101-videos/Videos/JumpRope/v_JumpRope_g17_c01.avi is missing 1 frames.
+Training Epoch: 31, Loss: 0.05735002774805676
+Time taken for Epoch-31 is 419.47381496429443
+
+Epoch 32 started
+Train at epoch 32
+Learning rate is: 5.0000000050000005e-05
+Training Epoch 32, Batch 0, Loss: 0.01560
+Training Epoch 32, Batch 50, Loss: 0.04190
+Training Epoch 32, Batch 100, Loss: 0.04825
+Training Epoch 32, Batch 150, Loss: 0.04513
+Training Epoch 32, Batch 200, Loss: 0.04306
+Training Epoch 32, Batch 250, Loss: 0.04403
+Training Epoch 32, Batch 300, Loss: 0.04340
+Training Epoch 32, Batch 350, Loss: 0.04395
+Training Epoch 32, Batch 400, Loss: 0.04351
+Training Epoch 32, Batch 450, Loss: 0.04252
+Training Epoch 32, Batch 500, Loss: 0.04222
+Training Epoch 32, Batch 550, Loss: 0.04264
+[262 264 266 268 270 272 274 276 278 280 282 284 286 288 290 292]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c02.avi Failed
+Clip ../../datasets/UCF101-videos/Videos/TennisSwing/v_TennisSwing_g16_c06.avi is missing 2 frames.
+Training Epoch: 32, Loss: 0.05019664039948044
+Time taken for Epoch-32 is 416.62233996391296
+
+Epoch 33 started
+Train at epoch 33
+Learning rate is: 5.0000000050000005e-05
+Training Epoch 33, Batch 0, Loss: 0.01110
+Training Epoch 33, Batch 50, Loss: 0.03914
+Training Epoch 33, Batch 100, Loss: 0.04695
+Training Epoch 33, Batch 150, Loss: 0.04458
+Training Epoch 33, Batch 200, Loss: 0.04620
+Training Epoch 33, Batch 250, Loss: 0.04731
+Training Epoch 33, Batch 300, Loss: 0.04637
+Training Epoch 33, Batch 350, Loss: 0.04829
+Training Epoch 33, Batch 400, Loss: 0.04860
+Training Epoch 33, Batch 450, Loss: 0.04775
+Training Epoch 33, Batch 500, Loss: 0.04862
+Training Epoch 33, Batch 550, Loss: 0.04904
+Clip ../../datasets/UCF101-videos/Videos/SoccerJuggling/v_SoccerJuggling_g16_c01.avi is missing 4 frames.
+Clip ../../datasets/UCF101-videos/Videos/JugglingBalls/v_JugglingBalls_g18_c04.avi is missing 1 frames.
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g16_c01.avi is missing 5 frames.
+Training Epoch: 33, Loss: 0.0573076670200617
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Learning rate dropping to its 2th value to 2.5000000025000002e-05 at epoch 33
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Time taken for Epoch-33 is 416.5911650657654
+
+Epoch 34 started
+Train at epoch 34
+Learning rate is: 2.5000000025000002e-05
+Training Epoch 34, Batch 0, Loss: 0.01733
+Training Epoch 34, Batch 50, Loss: 0.04393
+Training Epoch 34, Batch 100, Loss: 0.03920
+Training Epoch 34, Batch 150, Loss: 0.04135
+Training Epoch 34, Batch 200, Loss: 0.04103
+Training Epoch 34, Batch 250, Loss: 0.03872
+Training Epoch 34, Batch 300, Loss: 0.03894
+Training Epoch 34, Batch 350, Loss: 0.04021
+Training Epoch 34, Batch 400, Loss: 0.03850
+Training Epoch 34, Batch 450, Loss: 0.03928
+Training Epoch 34, Batch 500, Loss: 0.04059
+Training Epoch 34, Batch 550, Loss: 0.04145
+Clip ../../datasets/UCF101-videos/Videos/SoccerJuggling/v_SoccerJuggling_g24_c07.avi is missing 3 frames.
+[254 256 258 260 262 264 266 268 270 272 274 276 278 280 282 284]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c01.avi Failed
+Clip ../../datasets/UCF101-videos/Videos/Diving/v_Diving_g22_c06.avi is missing 1 frames.
+Training Epoch: 34, Loss: 0.04918223189767622
+Time taken for Epoch-34 is 425.2801375389099
+
+Epoch 35 started
+Train at epoch 35
+Learning rate is: 2.5000000025000002e-05
+Training Epoch 35, Batch 0, Loss: 0.03121
+Training Epoch 35, Batch 50, Loss: 0.03128
+Training Epoch 35, Batch 100, Loss: 0.03220
+Training Epoch 35, Batch 150, Loss: 0.03279
+Training Epoch 35, Batch 200, Loss: 0.03375
+Training Epoch 35, Batch 250, Loss: 0.03360
+Training Epoch 35, Batch 300, Loss: 0.03500
+Training Epoch 35, Batch 350, Loss: 0.03630
+Training Epoch 35, Batch 400, Loss: 0.03934
+Training Epoch 35, Batch 450, Loss: 0.03957
+Training Epoch 35, Batch 500, Loss: 0.03980
+Training Epoch 35, Batch 550, Loss: 0.03921
+[242 244 246 248 250 252 254 256 258 260 262 264 266 268 270 272]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c02.avi Failed
+Training Epoch: 35, Loss: 0.04817988170821561
+Validation at epoch 35.
+Validation Epoch 35, Batch 0 - Loss : 0.07465796917676926
+Validation Epoch 35, Batch 50 - Loss : 0.3517551257037649
+Validation Epoch 35, Batch 100 - Loss : 0.3932495021335043
+Validation Epoch 35, Batch 150 - Loss : 0.38143607385962314
+Validation Epoch 35, Batch 200 - Loss : 0.36837269480465284
+Total video count: 3783
+Epoch 35, * Video Acc@1 89.188 Video Acc@5 98.207, Loss: 0.3788677548846222
+Time taken for Epoch-35 is 546.459303855896
+
+Epoch 36 started
+Train at epoch 36
+Learning rate is: 2.5000000025000002e-05
+Training Epoch 36, Batch 0, Loss: 0.23216
+Training Epoch 36, Batch 50, Loss: 0.04512
+Training Epoch 36, Batch 100, Loss: 0.04213
+Training Epoch 36, Batch 150, Loss: 0.03832
+Training Epoch 36, Batch 200, Loss: 0.04004
+Training Epoch 36, Batch 250, Loss: 0.04136
+Training Epoch 36, Batch 300, Loss: 0.04033
+Training Epoch 36, Batch 350, Loss: 0.03912
+Training Epoch 36, Batch 400, Loss: 0.03983
+Training Epoch 36, Batch 450, Loss: 0.03982
+Training Epoch 36, Batch 500, Loss: 0.03960
+Training Epoch 36, Batch 550, Loss: 0.03847
+Training Epoch: 36, Loss: 0.045867921635100985
+Time taken for Epoch-36 is 414.75709342956543
+
+Epoch 37 started
+Train at epoch 37
+Learning rate is: 2.5000000025000002e-05
+Training Epoch 37, Batch 0, Loss: 0.17805
+Training Epoch 37, Batch 50, Loss: 0.04530
+Training Epoch 37, Batch 100, Loss: 0.04842
+Training Epoch 37, Batch 150, Loss: 0.04626
+Training Epoch 37, Batch 200, Loss: 0.04133
+Training Epoch 37, Batch 250, Loss: 0.04698
+Training Epoch 37, Batch 300, Loss: 0.04568
+Training Epoch 37, Batch 350, Loss: 0.04497
+Training Epoch 37, Batch 400, Loss: 0.04472
+Training Epoch 37, Batch 450, Loss: 0.04463
+Training Epoch 37, Batch 500, Loss: 0.04533
+Training Epoch 37, Batch 550, Loss: 0.04497
+[436 438 440 442 444 446 448 450 452 454 456 458 460 462 464 466]
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g16_c05.avi Failed
+[468 470 472 474 476 478 480 482 484 486 488 490 492 494 496 498]
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g16_c01.avi Failed
+[250 252 254 256 258 260 262 264 266 268 270 272 274 276 278 280]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c02.avi Failed
+Training Epoch: 37, Loss: 0.053092634180216335
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Learning rate dropping to its 2th value to 1.2500000012500001e-05 at epoch 37
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Time taken for Epoch-37 is 412.23094058036804
+
+Epoch 38 started
+Train at epoch 38
+Learning rate is: 1.2500000012500001e-05
+Training Epoch 38, Batch 0, Loss: 0.01458
+Training Epoch 38, Batch 50, Loss: 0.03272
+Training Epoch 38, Batch 100, Loss: 0.03223
+Training Epoch 38, Batch 150, Loss: 0.03858
+Training Epoch 38, Batch 200, Loss: 0.03707
+Training Epoch 38, Batch 250, Loss: 0.03608
+Training Epoch 38, Batch 300, Loss: 0.03475
+Training Epoch 38, Batch 350, Loss: 0.03396
+Training Epoch 38, Batch 400, Loss: 0.03370
+Training Epoch 38, Batch 450, Loss: 0.03309
+Training Epoch 38, Batch 500, Loss: 0.03289
+Training Epoch 38, Batch 550, Loss: 0.03147
+[245 247 249 251 253 255 257 259 261 263 265 267 269 271 273 275]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c02.avi Failed
+Training Epoch: 38, Loss: 0.03992211566403371
+Time taken for Epoch-38 is 409.3963370323181
+
+Epoch 39 started
+Train at epoch 39
+Learning rate is: 1.2500000012500001e-05
+Training Epoch 39, Batch 0, Loss: 0.14559
+Training Epoch 39, Batch 50, Loss: 0.05583
+Training Epoch 39, Batch 100, Loss: 0.04148
+Training Epoch 39, Batch 150, Loss: 0.04452
+Training Epoch 39, Batch 200, Loss: 0.04468
+Training Epoch 39, Batch 250, Loss: 0.04478
+Training Epoch 39, Batch 300, Loss: 0.04574
+Training Epoch 39, Batch 350, Loss: 0.04501
+Training Epoch 39, Batch 400, Loss: 0.04327
+Training Epoch 39, Batch 450, Loss: 0.04369
+Training Epoch 39, Batch 500, Loss: 0.04355
+Training Epoch 39, Batch 550, Loss: 0.04314
+Clip ../../datasets/UCF101-videos/Videos/JugglingBalls/v_JugglingBalls_g18_c04.avi is missing 2 frames.
+Clip ../../datasets/UCF101-videos/Videos/TennisSwing/v_TennisSwing_g09_c04.avi is missing 1 frames.
+Training Epoch: 39, Loss: 0.05103575453003073
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Learning rate dropping to its 2th value to 6.250000006250001e-06 at epoch 39
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Time taken for Epoch-39 is 410.2447843551636
+
+Epoch 40 started
+Train at epoch 40
+Learning rate is: 6.250000006250001e-06
+Training Epoch 40, Batch 0, Loss: 0.12854
+Training Epoch 40, Batch 50, Loss: 0.05058
+Training Epoch 40, Batch 100, Loss: 0.03980
+Training Epoch 40, Batch 150, Loss: 0.04531
+Training Epoch 40, Batch 200, Loss: 0.04121
+Training Epoch 40, Batch 250, Loss: 0.04111
+Training Epoch 40, Batch 300, Loss: 0.03875
+Training Epoch 40, Batch 350, Loss: 0.03898
+Training Epoch 40, Batch 400, Loss: 0.03974
+Training Epoch 40, Batch 450, Loss: 0.03965
+Training Epoch 40, Batch 500, Loss: 0.03878
+Training Epoch 40, Batch 550, Loss: 0.03839
+Training Epoch: 40, Loss: 0.04732363266399258
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Learning rate dropping to its 2th value to 3.1250000031250003e-06 at epoch 40
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Validation at epoch 40.
+Validation Epoch 40, Batch 0 - Loss : 0.11975789070129395
+Validation Epoch 40, Batch 50 - Loss : 0.32458859978371535
+Validation Epoch 40, Batch 100 - Loss : 0.34266936493401257
+Validation Epoch 40, Batch 150 - Loss : 0.366017711812951
+Validation Epoch 40, Batch 200 - Loss : 0.3646915061086583
+Total video count: 3783
+Epoch 40, * Video Acc@1 89.689 Video Acc@5 98.154, Loss: 0.3640462087677548
+++++++++++++++++++++++++++++++
+Epoch 40 is the best model till now for i3dv1!
+++++++++++++++++++++++++++++++
+Time taken for Epoch-40 is 550.4930205345154
+
+Epoch 41 started
+Train at epoch 41
+Learning rate is: 3.1250000031250003e-06
+Training Epoch 41, Batch 0, Loss: 0.00931
+Training Epoch 41, Batch 50, Loss: 0.03949
+Training Epoch 41, Batch 100, Loss: 0.03186
+Training Epoch 41, Batch 150, Loss: 0.03027
+Training Epoch 41, Batch 200, Loss: 0.03118
+Training Epoch 41, Batch 250, Loss: 0.02969
+Training Epoch 41, Batch 300, Loss: 0.02920
+Training Epoch 41, Batch 350, Loss: 0.03000
+Training Epoch 41, Batch 400, Loss: 0.02969
+Training Epoch 41, Batch 450, Loss: 0.03036
+Training Epoch 41, Batch 500, Loss: 0.03137
+Training Epoch 41, Batch 550, Loss: 0.03039
+Clip ../../datasets/UCF101-videos/Videos/TennisSwing/v_TennisSwing_g16_c05.avi is missing 1 frames.
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g16_c06.avi is missing 1 frames.
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g16_c01.avi is missing 5 frames.
+Clip ../../datasets/UCF101-videos/Videos/SoccerJuggling/v_SoccerJuggling_g16_c01.avi is missing 3 frames.
+Training Epoch: 41, Loss: 0.03727186019631833
+Validation at epoch 41.
+Validation Epoch 41, Batch 0 - Loss : 0.041155606508255005
+Validation Epoch 41, Batch 50 - Loss : 0.3188563989950161
+Validation Epoch 41, Batch 100 - Loss : 0.3381375703905331
+Validation Epoch 41, Batch 150 - Loss : 0.3505037007051588
+Validation Epoch 41, Batch 200 - Loss : 0.34942637908414925
+Total video count: 3783
+Epoch 41, * Video Acc@1 89.662 Video Acc@5 98.154, Loss: 0.36479485438884146
+Time taken for Epoch-41 is 553.6323843002319
+
+Epoch 42 started
+Train at epoch 42
+Learning rate is: 3.1250000031250003e-06
+Training Epoch 42, Batch 0, Loss: 0.00277
+Training Epoch 42, Batch 50, Loss: 0.02929
+Training Epoch 42, Batch 100, Loss: 0.03425
+Training Epoch 42, Batch 150, Loss: 0.03092
+Training Epoch 42, Batch 200, Loss: 0.02980
+Training Epoch 42, Batch 250, Loss: 0.02856
+Training Epoch 42, Batch 300, Loss: 0.02775
+Training Epoch 42, Batch 350, Loss: 0.02782
+Training Epoch 42, Batch 400, Loss: 0.02995
+Training Epoch 42, Batch 450, Loss: 0.02923
+Training Epoch 42, Batch 500, Loss: 0.03065
+Training Epoch 42, Batch 550, Loss: 0.03074
+Training Epoch: 42, Loss: 0.03862341070987231
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Learning rate dropping to its 2th value to 1.5625000015625002e-06 at epoch 42
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Validation at epoch 42.
+Validation Epoch 42, Batch 0 - Loss : 0.9647602438926697
+Validation Epoch 42, Batch 50 - Loss : 0.3709171561926019
+Validation Epoch 42, Batch 100 - Loss : 0.3527969613459219
+Validation Epoch 42, Batch 150 - Loss : 0.3453558379728717
+Validation Epoch 42, Batch 200 - Loss : 0.3535791647907773
+Total video count: 3783
+Epoch 42, * Video Acc@1 89.583 Video Acc@5 98.049, Loss: 0.36421435604359215
+Time taken for Epoch-42 is 565.4483640193939
+
+Epoch 43 started
+Train at epoch 43
+Learning rate is: 1.5625000015625002e-06
+Training Epoch 43, Batch 0, Loss: 0.00754
+Training Epoch 43, Batch 50, Loss: 0.03256
+Training Epoch 43, Batch 100, Loss: 0.02878
+Training Epoch 43, Batch 150, Loss: 0.03095
+Training Epoch 43, Batch 200, Loss: 0.03253
+Training Epoch 43, Batch 250, Loss: 0.03326
+Training Epoch 43, Batch 300, Loss: 0.03369
+Training Epoch 43, Batch 350, Loss: 0.03558
+Training Epoch 43, Batch 400, Loss: 0.03556
+Training Epoch 43, Batch 450, Loss: 0.03520
+Training Epoch 43, Batch 500, Loss: 0.03553
+Training Epoch 43, Batch 550, Loss: 0.03446
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g16_c01.avi is missing 3 frames.
+[252 254 256 258 260 262 264 266 268 270 272 274 276 278 280 282]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c02.avi Failed
+Training Epoch: 43, Loss: 0.041030223572227346
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Learning rate dropping to its 2th value to 7.812500007812501e-07 at epoch 43
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Validation at epoch 43.
+Validation Epoch 43, Batch 0 - Loss : 0.3948943018913269
+Validation Epoch 43, Batch 50 - Loss : 0.3922238492078203
+Validation Epoch 43, Batch 100 - Loss : 0.3609781946645736
+Validation Epoch 43, Batch 150 - Loss : 0.3780583227947601
+Validation Epoch 43, Batch 200 - Loss : 0.3630567184297266
+Total video count: 3783
+Epoch 43, * Video Acc@1 89.531 Video Acc@5 98.101, Loss: 0.3606318378858347
+Time taken for Epoch-43 is 564.9129359722137
+
+Epoch 44 started
+Train at epoch 44
+Learning rate is: 7.812500007812501e-07
+Training Epoch 44, Batch 0, Loss: 0.00417
+Training Epoch 44, Batch 50, Loss: 0.03585
+Training Epoch 44, Batch 100, Loss: 0.03548
+Training Epoch 44, Batch 150, Loss: 0.03040
+Training Epoch 44, Batch 200, Loss: 0.02979
+Training Epoch 44, Batch 250, Loss: 0.03032
+Training Epoch 44, Batch 300, Loss: 0.02982
+Training Epoch 44, Batch 350, Loss: 0.02848
+Training Epoch 44, Batch 400, Loss: 0.02758
+Training Epoch 44, Batch 450, Loss: 0.02798
+Training Epoch 44, Batch 500, Loss: 0.02987
+Training Epoch 44, Batch 550, Loss: 0.03120
+[241 243 245 247 249 251 253 255 257 259 261 263 265 267 269 271]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c01.avi Failed
+Training Epoch: 44, Loss: 0.03944642237499528
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Learning rate dropping to its 2th value to 3.9062500039062504e-07 at epoch 44
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Validation at epoch 44.
+Validation Epoch 44, Batch 0 - Loss : 0.3630838990211487
+Validation Epoch 44, Batch 50 - Loss : 0.36344420029690455
+Validation Epoch 44, Batch 100 - Loss : 0.3829942100294082
+Validation Epoch 44, Batch 150 - Loss : 0.3547802264370419
+Validation Epoch 44, Batch 200 - Loss : 0.36401665837860747
+Total video count: 3783
+Epoch 44, * Video Acc@1 89.583 Video Acc@5 98.128, Loss: 0.36387560461482765
+Time taken for Epoch-44 is 556.3235061168671
+
+Epoch 45 started
+Train at epoch 45
+Learning rate is: 3.9062500039062504e-07
+Training Epoch 45, Batch 0, Loss: 0.05079
+Training Epoch 45, Batch 50, Loss: 0.03258
+Training Epoch 45, Batch 100, Loss: 0.03110
+Training Epoch 45, Batch 150, Loss: 0.03417
+Training Epoch 45, Batch 200, Loss: 0.03222
+Training Epoch 45, Batch 250, Loss: 0.03210
+Training Epoch 45, Batch 300, Loss: 0.03377
+Training Epoch 45, Batch 350, Loss: 0.03389
+Training Epoch 45, Batch 400, Loss: 0.03326
+Training Epoch 45, Batch 450, Loss: 0.03163
+Training Epoch 45, Batch 500, Loss: 0.03085
+Training Epoch 45, Batch 550, Loss: 0.03142
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g13_c04.avi is missing 3 frames.
+Clip ../../datasets/UCF101-videos/Videos/TennisSwing/v_TennisSwing_g09_c04.avi is missing 1 frames.
+Training Epoch: 45, Loss: 0.04034462415587299
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Learning rate dropping to its 2th value to 1.9531250019531252e-07 at epoch 45
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Validation at epoch 45.
+Validation Epoch 45, Batch 0 - Loss : 0.4976768493652344
+Validation Epoch 45, Batch 50 - Loss : 0.33924983883751375
+Validation Epoch 45, Batch 100 - Loss : 0.37186938257758867
+Validation Epoch 45, Batch 150 - Loss : 0.3709181548521811
+Validation Epoch 45, Batch 200 - Loss : 0.35787154097962587
+Total video count: 3783
+Epoch 45, * Video Acc@1 89.689 Video Acc@5 98.180, Loss: 0.36224090439102413
+Time taken for Epoch-45 is 578.5068666934967
+
+Epoch 46 started
+Train at epoch 46
+Learning rate is: 1.9531250019531252e-07
+Training Epoch 46, Batch 0, Loss: 0.02495
+Training Epoch 46, Batch 50, Loss: 0.02891
+Training Epoch 46, Batch 100, Loss: 0.04138
+Training Epoch 46, Batch 150, Loss: 0.03608
+Training Epoch 46, Batch 200, Loss: 0.03347
+Training Epoch 46, Batch 250, Loss: 0.03346
+Training Epoch 46, Batch 300, Loss: 0.03183
+Training Epoch 46, Batch 350, Loss: 0.03561
+Training Epoch 46, Batch 400, Loss: 0.03468
+Training Epoch 46, Batch 450, Loss: 0.03703
+Training Epoch 46, Batch 500, Loss: 0.03762
+Training Epoch 46, Batch 550, Loss: 0.03655
+[311 313 315 317 319 321 323 325 327 329 331 333 335 337 339 341]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c03.avi Failed
+Clip ../../datasets/UCF101-videos/Videos/SoccerJuggling/v_SoccerJuggling_g16_c02.avi is missing 2 frames.
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g16_c05.avi is missing 2 frames.
+Training Epoch: 46, Loss: 0.04332199283010502
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Learning rate dropping to its 2th value to 9.765625009765626e-08 at epoch 46
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Validation at epoch 46.
+Validation Epoch 46, Batch 0 - Loss : 0.0136701175943017
+Validation Epoch 46, Batch 50 - Loss : 0.33462247573861886
+Validation Epoch 46, Batch 100 - Loss : 0.35251010237907127
+Validation Epoch 46, Batch 150 - Loss : 0.33734084308048745
+Validation Epoch 46, Batch 200 - Loss : 0.35464780255040124
+Total video count: 3783
+Epoch 46, * Video Acc@1 89.636 Video Acc@5 98.101, Loss: 0.365545826164646
+Time taken for Epoch-46 is 559.0320916175842
+
+Epoch 47 started
+Train at epoch 47
+Learning rate is: 9.765625009765626e-08
+Training Epoch 47, Batch 0, Loss: 0.02755
+Training Epoch 47, Batch 50, Loss: 0.03306
+Training Epoch 47, Batch 100, Loss: 0.02786
+Training Epoch 47, Batch 150, Loss: 0.03058
+Training Epoch 47, Batch 200, Loss: 0.03150
+Training Epoch 47, Batch 250, Loss: 0.03115
+Training Epoch 47, Batch 300, Loss: 0.03064
+Training Epoch 47, Batch 350, Loss: 0.03056
+Training Epoch 47, Batch 400, Loss: 0.03134
+Training Epoch 47, Batch 450, Loss: 0.03273
+Training Epoch 47, Batch 500, Loss: 0.03269
+Training Epoch 47, Batch 550, Loss: 0.03306
+Clip ../../datasets/UCF101-videos/Videos/JugglingBalls/v_JugglingBalls_g18_c04.avi is missing 3 frames.
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c02.avi is missing 3 frames.
+Training Epoch: 47, Loss: 0.04138612918510107
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Learning rate dropping to its 2th value to 4.882812504882813e-08 at epoch 47
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Validation at epoch 47.
+Validation Epoch 47, Batch 0 - Loss : 0.35423174500465393
+Validation Epoch 47, Batch 50 - Loss : 0.38148828500918314
+Validation Epoch 47, Batch 100 - Loss : 0.37081122292334784
+Validation Epoch 47, Batch 150 - Loss : 0.357661919378435
+Validation Epoch 47, Batch 200 - Loss : 0.3581575399498682
+Total video count: 3783
+Epoch 47, * Video Acc@1 89.662 Video Acc@5 98.207, Loss: 0.3625041134547411
+Time taken for Epoch-47 is 543.4770538806915
+
+Epoch 48 started
+Train at epoch 48
+Learning rate is: 4.882812504882813e-08
+Training Epoch 48, Batch 0, Loss: 0.00342
+Training Epoch 48, Batch 50, Loss: 0.04047
+Training Epoch 48, Batch 100, Loss: 0.04535
+Training Epoch 48, Batch 150, Loss: 0.04524
+Training Epoch 48, Batch 200, Loss: 0.04198
+Training Epoch 48, Batch 250, Loss: 0.04058
+Training Epoch 48, Batch 300, Loss: 0.03776
+Training Epoch 48, Batch 350, Loss: 0.03709
+Training Epoch 48, Batch 400, Loss: 0.03693
+Training Epoch 48, Batch 450, Loss: 0.03603
+Training Epoch 48, Batch 500, Loss: 0.03619
+Training Epoch 48, Batch 550, Loss: 0.03493
+Training Epoch: 48, Loss: 0.04043138312579326
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Learning rate dropping to its 2th value to 2.4414062524414065e-08 at epoch 48
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Validation at epoch 48.
+Validation Epoch 48, Batch 0 - Loss : 0.5517409443855286
+Validation Epoch 48, Batch 50 - Loss : 0.3664899387342088
+Validation Epoch 48, Batch 100 - Loss : 0.35816904047670045
+Validation Epoch 48, Batch 150 - Loss : 0.3444364836797217
+Validation Epoch 48, Batch 200 - Loss : 0.369856125531505
+Total video count: 3783
+Epoch 48, * Video Acc@1 89.531 Video Acc@5 98.154, Loss: 0.3646619919105924
+Time taken for Epoch-48 is 537.6857070922852
+
+Epoch 49 started
+Train at epoch 49
+Learning rate is: 2.4414062524414065e-08
+Training Epoch 49, Batch 0, Loss: 0.00787
+Training Epoch 49, Batch 50, Loss: 0.02817
+Training Epoch 49, Batch 100, Loss: 0.02373
+Training Epoch 49, Batch 150, Loss: 0.02552
+Training Epoch 49, Batch 200, Loss: 0.02840
+Training Epoch 49, Batch 250, Loss: 0.03079
+Training Epoch 49, Batch 300, Loss: 0.03230
+Training Epoch 49, Batch 350, Loss: 0.03207
+Training Epoch 49, Batch 400, Loss: 0.03316
+Training Epoch 49, Batch 450, Loss: 0.03380
+Training Epoch 49, Batch 500, Loss: 0.03364
+Training Epoch 49, Batch 550, Loss: 0.03358
+[259 261 263 265 267 269 271 273 275 277 279 281 283 285 287 289]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c02.avi Failed
+Training Epoch: 49, Loss: 0.041484141979624724
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Learning rate dropping to its 2th value to 1.2207031262207032e-08 at epoch 49
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Validation at epoch 49.
+Validation Epoch 49, Batch 0 - Loss : 0.20775195956230164
+Validation Epoch 49, Batch 50 - Loss : 0.30224341780458597
+Validation Epoch 49, Batch 100 - Loss : 0.30798085154688887
+Validation Epoch 49, Batch 150 - Loss : 0.3386412722965246
+Validation Epoch 49, Batch 200 - Loss : 0.3474488481137883
+Total video count: 3783
+Epoch 49, * Video Acc@1 89.557 Video Acc@5 98.101, Loss: 0.36194120209176833
+Time taken for Epoch-49 is 541.988293170929
+
+Epoch 50 started
+Train at epoch 50
+Learning rate is: 1.2207031262207032e-08
+Training Epoch 50, Batch 0, Loss: 0.05048
+Training Epoch 50, Batch 50, Loss: 0.04510
+Training Epoch 50, Batch 100, Loss: 0.04110
+Training Epoch 50, Batch 150, Loss: 0.03925
+Training Epoch 50, Batch 200, Loss: 0.03716
+Training Epoch 50, Batch 250, Loss: 0.03715
+Training Epoch 50, Batch 300, Loss: 0.03601
+Training Epoch 50, Batch 350, Loss: 0.03560
+Training Epoch 50, Batch 400, Loss: 0.03592
+Training Epoch 50, Batch 450, Loss: 0.03599
+Training Epoch 50, Batch 500, Loss: 0.03641
+Training Epoch 50, Batch 550, Loss: 0.03560
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g16_c04.avi is missing 1 frames.
+Clip ../../datasets/UCF101-videos/Videos/SoccerJuggling/v_SoccerJuggling_g16_c02.avi is missing 1 frames.
+Training Epoch: 50, Loss: 0.04628182843671113
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Learning rate dropping to its 2th value to 6.103515631103516e-09 at epoch 50
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Validation at epoch 50.
+Validation Epoch 50, Batch 0 - Loss : 0.2672964334487915
+Validation Epoch 50, Batch 50 - Loss : 0.4392337992367353
+Validation Epoch 50, Batch 100 - Loss : 0.4246952429386132
+Validation Epoch 50, Batch 150 - Loss : 0.3895969176449079
+Validation Epoch 50, Batch 200 - Loss : 0.3654484105162063
+Total video count: 3783
+Epoch 50, * Video Acc@1 89.557 Video Acc@5 98.075, Loss: 0.3637139362200529
+Time taken for Epoch-50 is 545.7694239616394
+
+Epoch 51 started
+Train at epoch 51
+Learning rate is: 6.103515631103516e-09
+Training Epoch 51, Batch 0, Loss: 0.00587
+Training Epoch 51, Batch 50, Loss: 0.02757
+Training Epoch 51, Batch 100, Loss: 0.03772
+Training Epoch 51, Batch 150, Loss: 0.03384
+Training Epoch 51, Batch 200, Loss: 0.03212
+Training Epoch 51, Batch 250, Loss: 0.03072
+Training Epoch 51, Batch 300, Loss: 0.03192
+Training Epoch 51, Batch 350, Loss: 0.03198
+Training Epoch 51, Batch 400, Loss: 0.03262
+Training Epoch 51, Batch 450, Loss: 0.03379
+Training Epoch 51, Batch 500, Loss: 0.03452
+Training Epoch 51, Batch 550, Loss: 0.03398
+Clip ../../datasets/UCF101-videos/Videos/TennisSwing/v_TennisSwing_g23_c01.avi is missing 2 frames.
+[237 239 241 243 245 247 249 251 253 255 257 259 261 263 265 267]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c01.avi Failed
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g16_c01.avi is missing 1 frames.
+Training Epoch: 51, Loss: 0.03975774357093411
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Learning rate dropping to its 2th value to 3.051757815551758e-09 at epoch 51
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Validation at epoch 51.
+Validation Epoch 51, Batch 0 - Loss : 0.20156630873680115
+Validation Epoch 51, Batch 50 - Loss : 0.4030940720957576
+Validation Epoch 51, Batch 100 - Loss : 0.3629954677895818
+Validation Epoch 51, Batch 150 - Loss : 0.369996433821661
+Validation Epoch 51, Batch 200 - Loss : 0.36695354783546125
+Total video count: 3783
+Epoch 51, * Video Acc@1 89.636 Video Acc@5 98.101, Loss: 0.36461406469518
+Time taken for Epoch-51 is 546.8115336894989
+
+Epoch 52 started
+Train at epoch 52
+Learning rate is: 3.051757815551758e-09
+Training Epoch 52, Batch 0, Loss: 0.02190
+Training Epoch 52, Batch 50, Loss: 0.03401
+Training Epoch 52, Batch 100, Loss: 0.02958
+Training Epoch 52, Batch 150, Loss: 0.02887
+Training Epoch 52, Batch 200, Loss: 0.02744
+Training Epoch 52, Batch 250, Loss: 0.02955
+Training Epoch 52, Batch 300, Loss: 0.02969
+Training Epoch 52, Batch 350, Loss: 0.03007
+Training Epoch 52, Batch 400, Loss: 0.03070
+Training Epoch 52, Batch 450, Loss: 0.03192
+Training Epoch 52, Batch 500, Loss: 0.03133
+Training Epoch 52, Batch 550, Loss: 0.03012
+Clip ../../datasets/UCF101-videos/Videos/Biking/v_Biking_g22_c03.avi is missing 2 frames.
+[288 290 292 294 296 298 300 302 304 306 308 310 312 314 316 318]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c03.avi Failed
+Training Epoch: 52, Loss: 0.03653129256633461
+Validation at epoch 52.
+Validation Epoch 52, Batch 0 - Loss : 0.38761669397354126
+Validation Epoch 52, Batch 50 - Loss : 0.4200361487912197
+Validation Epoch 52, Batch 100 - Loss : 0.3815075443080156
+Validation Epoch 52, Batch 150 - Loss : 0.381460383614997
+Validation Epoch 52, Batch 200 - Loss : 0.3752917396000225
+Total video count: 3783
+Epoch 52, * Video Acc@1 89.610 Video Acc@5 98.075, Loss: 0.36211313420581487
+Time taken for Epoch-52 is 545.3754889965057
+
+Epoch 53 started
+Train at epoch 53
+Learning rate is: 3.051757815551758e-09
+Training Epoch 53, Batch 0, Loss: 0.00506
+Training Epoch 53, Batch 50, Loss: 0.03380
+Training Epoch 53, Batch 100, Loss: 0.03745
+Training Epoch 53, Batch 150, Loss: 0.03484
+Training Epoch 53, Batch 200, Loss: 0.03648
+Training Epoch 53, Batch 250, Loss: 0.03611
+Training Epoch 53, Batch 300, Loss: 0.03387
+Training Epoch 53, Batch 350, Loss: 0.03429
+Training Epoch 53, Batch 400, Loss: 0.03343
+Training Epoch 53, Batch 450, Loss: 0.03313
+Training Epoch 53, Batch 500, Loss: 0.03400
+Training Epoch 53, Batch 550, Loss: 0.03287
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c01.avi is missing 7 frames.
+[264 266 268 270 272 274 276 278 280 282 284 286 288 290 292 294]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c03.avi Failed
+Training Epoch: 53, Loss: 0.04052157582018222
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Learning rate dropping to its 2th value to 1.525878907775879e-09 at epoch 53
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Validation at epoch 53.
+Validation Epoch 53, Batch 0 - Loss : 0.96553635597229
+Validation Epoch 53, Batch 50 - Loss : 0.32785223778702466
+Validation Epoch 53, Batch 100 - Loss : 0.3223490902766733
+Validation Epoch 53, Batch 150 - Loss : 0.3503647209977768
+Validation Epoch 53, Batch 200 - Loss : 0.3588795016533626
+Total video count: 3783
+Epoch 53, * Video Acc@1 89.478 Video Acc@5 98.207, Loss: 0.36095090206508146
+Time taken for Epoch-53 is 547.7643945217133
+
+Epoch 54 started
+Train at epoch 54
+Learning rate is: 1.525878907775879e-09
+Training Epoch 54, Batch 0, Loss: 0.01425
+Training Epoch 54, Batch 50, Loss: 0.06616
+Training Epoch 54, Batch 100, Loss: 0.04684
+Training Epoch 54, Batch 150, Loss: 0.04225
+Training Epoch 54, Batch 200, Loss: 0.03793
+Training Epoch 54, Batch 250, Loss: 0.03763
+Training Epoch 54, Batch 300, Loss: 0.03478
+Training Epoch 54, Batch 350, Loss: 0.03499
+Training Epoch 54, Batch 400, Loss: 0.03446
+Training Epoch 54, Batch 450, Loss: 0.03348
+Training Epoch 54, Batch 500, Loss: 0.03452
+Training Epoch 54, Batch 550, Loss: 0.03425
+Clip ../../datasets/UCF101-videos/Videos/TennisSwing/v_TennisSwing_g16_c01.avi is missing 2 frames.
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g16_c06.avi is missing 1 frames.
+Training Epoch: 54, Loss: 0.0419564924251707
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Learning rate dropping to its 2th value to 7.629394538879395e-10 at epoch 54
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Validation at epoch 54.
+Validation Epoch 54, Batch 0 - Loss : 0.29935503005981445
+Validation Epoch 54, Batch 50 - Loss : 0.36110332177258003
+Validation Epoch 54, Batch 100 - Loss : 0.37067366927507156
+Validation Epoch 54, Batch 150 - Loss : 0.3698271923036999
+Validation Epoch 54, Batch 200 - Loss : 0.3621758098698995
+Total video count: 3783
+Epoch 54, * Video Acc@1 89.557 Video Acc@5 98.154, Loss: 0.36298901023085817
+Time taken for Epoch-54 is 547.9660351276398
+
+Epoch 55 started
+Train at epoch 55
+Learning rate is: 7.629394538879395e-10
+Training Epoch 55, Batch 0, Loss: 0.00527
+Training Epoch 55, Batch 50, Loss: 0.02698
+Training Epoch 55, Batch 100, Loss: 0.02781
+Training Epoch 55, Batch 150, Loss: 0.03135
+Training Epoch 55, Batch 200, Loss: 0.03081
+Training Epoch 55, Batch 250, Loss: 0.03199
+Training Epoch 55, Batch 300, Loss: 0.03704
+Training Epoch 55, Batch 350, Loss: 0.03588
+Training Epoch 55, Batch 400, Loss: 0.03492
+Training Epoch 55, Batch 450, Loss: 0.03378
+Training Epoch 55, Batch 500, Loss: 0.03410
+Training Epoch 55, Batch 550, Loss: 0.03261
+[262 264 266 268 270 272 274 276 278 280 282 284 286 288 290 292]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c01.avi Failed
+[243 245 247 249 251 253 255 257 259 261 263 265 267 269 271 273]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c02.avi Failed
+Training Epoch: 55, Loss: 0.039523192120160616
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Learning rate dropping to its 2th value to 3.8146972694396976e-10 at epoch 55
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Validation at epoch 55.
+Validation Epoch 55, Batch 0 - Loss : 0.24679777026176453
+Validation Epoch 55, Batch 50 - Loss : 0.35377567100758645
+Validation Epoch 55, Batch 100 - Loss : 0.33474602167596024
+Validation Epoch 55, Batch 150 - Loss : 0.3409027885707305
+Validation Epoch 55, Batch 200 - Loss : 0.3621624234220504
+Total video count: 3783
+Epoch 55, * Video Acc@1 89.531 Video Acc@5 98.049, Loss: 0.36313289654232905
+Time taken for Epoch-55 is 545.8601424694061
+
+Epoch 56 started
+Train at epoch 56
+Learning rate is: 3.8146972694396976e-10
+Training Epoch 56, Batch 0, Loss: 0.00852
+Training Epoch 56, Batch 50, Loss: 0.04157
+Training Epoch 56, Batch 100, Loss: 0.04119
+Training Epoch 56, Batch 150, Loss: 0.03345
+Training Epoch 56, Batch 200, Loss: 0.03520
+Training Epoch 56, Batch 250, Loss: 0.03554
+Training Epoch 56, Batch 300, Loss: 0.03409
+Training Epoch 56, Batch 350, Loss: 0.03221
+Training Epoch 56, Batch 400, Loss: 0.03289
+Training Epoch 56, Batch 450, Loss: 0.03465
+Training Epoch 56, Batch 500, Loss: 0.03623
+Training Epoch 56, Batch 550, Loss: 0.03573
+Clip ../../datasets/UCF101-videos/Videos/JumpRope/v_JumpRope_g17_c02.avi is missing 2 frames.
+[260 262 264 266 268 270 272 274 276 278 280 282 284 286 288 290]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c02.avi Failed
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g16_c05.avi is missing 6 frames.
+Training Epoch: 56, Loss: 0.040964099934922886
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Learning rate dropping to its 2th value to 1.9073486347198488e-10 at epoch 56
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Validation at epoch 56.
+Validation Epoch 56, Batch 0 - Loss : 0.6454905271530151
+Validation Epoch 56, Batch 50 - Loss : 0.4112653143557848
+Validation Epoch 56, Batch 100 - Loss : 0.4050173327732499
+Validation Epoch 56, Batch 150 - Loss : 0.3737618069824399
+Validation Epoch 56, Batch 200 - Loss : 0.3620294475446071
+Total video count: 3783
+Epoch 56, * Video Acc@1 89.689 Video Acc@5 98.233, Loss: 0.366181869103027
+Time taken for Epoch-56 is 545.3326182365417
+
+Epoch 57 started
+Train at epoch 57
+Learning rate is: 1.9073486347198488e-10
+Training Epoch 57, Batch 0, Loss: 0.05327
+Training Epoch 57, Batch 50, Loss: 0.02007
+Training Epoch 57, Batch 100, Loss: 0.02222
+Training Epoch 57, Batch 150, Loss: 0.02040
+Training Epoch 57, Batch 200, Loss: 0.02424
+Training Epoch 57, Batch 250, Loss: 0.02459
+Training Epoch 57, Batch 300, Loss: 0.02586
+Training Epoch 57, Batch 350, Loss: 0.02659
+Training Epoch 57, Batch 400, Loss: 0.02601
+Training Epoch 57, Batch 450, Loss: 0.02768
+Training Epoch 57, Batch 500, Loss: 0.02823
+Training Epoch 57, Batch 550, Loss: 0.02866
+Training Epoch: 57, Loss: 0.035378455239146483
+Validation at epoch 57.
+Validation Epoch 57, Batch 0 - Loss : 0.4187295138835907
+Validation Epoch 57, Batch 50 - Loss : 0.374649957680673
+Validation Epoch 57, Batch 100 - Loss : 0.35735989331572066
+Validation Epoch 57, Batch 150 - Loss : 0.35178575506865584
+Validation Epoch 57, Batch 200 - Loss : 0.3528948707241954
+Total video count: 3783
+Epoch 57, * Video Acc@1 89.583 Video Acc@5 98.101, Loss: 0.36506392406142524
+Time taken for Epoch-57 is 547.4823634624481
+
+Epoch 58 started
+Train at epoch 58
+Learning rate is: 1.9073486347198488e-10
+Training Epoch 58, Batch 0, Loss: 0.00630
+Training Epoch 58, Batch 50, Loss: 0.02071
+Training Epoch 58, Batch 100, Loss: 0.03471
+Training Epoch 58, Batch 150, Loss: 0.03679
+Training Epoch 58, Batch 200, Loss: 0.03681
+Training Epoch 58, Batch 250, Loss: 0.03475
+Training Epoch 58, Batch 300, Loss: 0.03700
+Training Epoch 58, Batch 350, Loss: 0.03700
+Training Epoch 58, Batch 400, Loss: 0.03670
+Training Epoch 58, Batch 450, Loss: 0.03505
+Training Epoch 58, Batch 500, Loss: 0.03410
+Training Epoch 58, Batch 550, Loss: 0.03323
+Clip ../../datasets/UCF101-videos/Videos/TennisSwing/v_TennisSwing_g23_c01.avi is missing 1 frames.
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c01.avi is missing 1 frames.
+Clip ../../datasets/UCF101-videos/Videos/TennisSwing/v_TennisSwing_g16_c01.avi is missing 2 frames.
+Training Epoch: 58, Loss: 0.04046131706247855
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Learning rate dropping to its 2th value to 9.536743173599244e-11 at epoch 58
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Validation at epoch 58.
+Validation Epoch 58, Batch 0 - Loss : 0.46984848380088806
+Validation Epoch 58, Batch 50 - Loss : 0.41386933332564785
+Validation Epoch 58, Batch 100 - Loss : 0.38119251106745833
+Validation Epoch 58, Batch 150 - Loss : 0.37121642513558367
+Validation Epoch 58, Batch 200 - Loss : 0.3635606739846109
+Total video count: 3783
+Epoch 58, * Video Acc@1 89.636 Video Acc@5 98.128, Loss: 0.36379090975184103
+Time taken for Epoch-58 is 549.6360893249512
+
+Epoch 59 started
+Train at epoch 59
+Learning rate is: 9.536743173599244e-11
+Training Epoch 59, Batch 0, Loss: 0.00944
+Training Epoch 59, Batch 50, Loss: 0.03212
+Training Epoch 59, Batch 100, Loss: 0.03478
+Training Epoch 59, Batch 150, Loss: 0.03490
+Training Epoch 59, Batch 200, Loss: 0.03452
+Training Epoch 59, Batch 250, Loss: 0.03331
+Training Epoch 59, Batch 300, Loss: 0.03584
+Training Epoch 59, Batch 350, Loss: 0.03626
+Training Epoch 59, Batch 400, Loss: 0.03643
+Training Epoch 59, Batch 450, Loss: 0.03566
+Training Epoch 59, Batch 500, Loss: 0.03403
+Training Epoch 59, Batch 550, Loss: 0.03272
+[472 474 476 478 480 482 484 486 488 490 492 494 496 498 500 502]
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g16_c01.avi Failed
+Clip ../../datasets/UCF101-videos/Videos/TennisSwing/v_TennisSwing_g16_c04.avi is missing 2 frames.
+[244 246 248 250 252 254 256 258 260 262 264 266 268 270 272 274]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c01.avi Failed
+Training Epoch: 59, Loss: 0.0414782696744034
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Learning rate dropping to its 2th value to 4.768371586799622e-11 at epoch 59
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Validation at epoch 59.
+Validation Epoch 59, Batch 0 - Loss : 0.3265104591846466
+Validation Epoch 59, Batch 50 - Loss : 0.42538781261400266
+Validation Epoch 59, Batch 100 - Loss : 0.3873534282614099
+Validation Epoch 59, Batch 150 - Loss : 0.36330702100319184
+Validation Epoch 59, Batch 200 - Loss : 0.36751348786612054
+Total video count: 3783
+Epoch 59, * Video Acc@1 89.610 Video Acc@5 98.101, Loss: 0.3637284204906112
+Time taken for Epoch-59 is 551.7258832454681
+
+Epoch 60 started
+Train at epoch 60
+Learning rate is: 4.768371586799622e-11
+Training Epoch 60, Batch 0, Loss: 0.00558
+Training Epoch 60, Batch 50, Loss: 0.02686
+Training Epoch 60, Batch 100, Loss: 0.02594
+Training Epoch 60, Batch 150, Loss: 0.03306
+Training Epoch 60, Batch 200, Loss: 0.03515
+Training Epoch 60, Batch 250, Loss: 0.03435
+Training Epoch 60, Batch 300, Loss: 0.03370
+Training Epoch 60, Batch 350, Loss: 0.03416
+Training Epoch 60, Batch 400, Loss: 0.03270
+Training Epoch 60, Batch 450, Loss: 0.03341
+Training Epoch 60, Batch 500, Loss: 0.03337
+Training Epoch 60, Batch 550, Loss: 0.03332
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c01.avi is missing 5 frames.
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c02.avi is missing 4 frames.
+Training Epoch: 60, Loss: 0.03960099271685821
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Learning rate dropping to its 2th value to 2.384185793399811e-11 at epoch 60
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Validation at epoch 60.
+Validation Epoch 60, Batch 0 - Loss : 0.12992429733276367
+Validation Epoch 60, Batch 50 - Loss : 0.3697157883468796
+Validation Epoch 60, Batch 100 - Loss : 0.3625998606739363
+Validation Epoch 60, Batch 150 - Loss : 0.3618377530762297
+Validation Epoch 60, Batch 200 - Loss : 0.35967786343703373
+Total video count: 3783
+Epoch 60, * Video Acc@1 89.531 Video Acc@5 98.101, Loss: 0.3634886871787566
+Time taken for Epoch-60 is 547.1228280067444
+
+Epoch 61 started
+Train at epoch 61
+Learning rate is: 2.384185793399811e-11
+Training Epoch 61, Batch 0, Loss: 0.09234
+Training Epoch 61, Batch 50, Loss: 0.03285
+Training Epoch 61, Batch 100, Loss: 0.02544
+Training Epoch 61, Batch 150, Loss: 0.03192
+Training Epoch 61, Batch 200, Loss: 0.03271
+Training Epoch 61, Batch 250, Loss: 0.03086
+Training Epoch 61, Batch 300, Loss: 0.03216
+Training Epoch 61, Batch 350, Loss: 0.03372
+Training Epoch 61, Batch 400, Loss: 0.03275
+Training Epoch 61, Batch 450, Loss: 0.03328
+Training Epoch 61, Batch 500, Loss: 0.03387
+Training Epoch 61, Batch 550, Loss: 0.03301
+Clip ../../datasets/UCF101-videos/Videos/JugglingBalls/v_JugglingBalls_g18_c02.avi is missing 3 frames.
+Clip ../../datasets/UCF101-videos/Videos/TennisSwing/v_TennisSwing_g23_c01.avi is missing 2 frames.
+Training Epoch: 61, Loss: 0.03967922983927632
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Learning rate dropping to its 2th value to 1.1920928966999055e-11 at epoch 61
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Validation at epoch 61.
+Validation Epoch 61, Batch 0 - Loss : 0.9807960987091064
+Validation Epoch 61, Batch 50 - Loss : 0.40095404444225863
+Validation Epoch 61, Batch 100 - Loss : 0.3844506396637713
+Validation Epoch 61, Batch 150 - Loss : 0.36937791750911275
+Validation Epoch 61, Batch 200 - Loss : 0.37219780606428504
+Total video count: 3783
+Epoch 61, * Video Acc@1 89.610 Video Acc@5 98.049, Loss: 0.36522220935572314
+Time taken for Epoch-61 is 556.6638281345367
+
+Epoch 62 started
+Train at epoch 62
+Learning rate is: 1.1920928966999055e-11
+Training Epoch 62, Batch 0, Loss: 0.00231
+Training Epoch 62, Batch 50, Loss: 0.02686
+Training Epoch 62, Batch 100, Loss: 0.02807
+Training Epoch 62, Batch 150, Loss: 0.03226
+Training Epoch 62, Batch 200, Loss: 0.03333
+Training Epoch 62, Batch 250, Loss: 0.03303
+Training Epoch 62, Batch 300, Loss: 0.03147
+Training Epoch 62, Batch 350, Loss: 0.03267
+Training Epoch 62, Batch 400, Loss: 0.03218
+Training Epoch 62, Batch 450, Loss: 0.03162
+Training Epoch 62, Batch 500, Loss: 0.03150
+Training Epoch 62, Batch 550, Loss: 0.03136
+Clip ../../datasets/UCF101-videos/Videos/SoccerJuggling/v_SoccerJuggling_g16_c03.avi is missing 3 frames.
+Training Epoch: 62, Loss: 0.039250257902030274
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Learning rate dropping to its 2th value to 5.9604644834995276e-12 at epoch 62
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Validation at epoch 62.
+Validation Epoch 62, Batch 0 - Loss : 0.30307236313819885
+Validation Epoch 62, Batch 50 - Loss : 0.28230814780473856
+Validation Epoch 62, Batch 100 - Loss : 0.3267014776517886
+Validation Epoch 62, Batch 150 - Loss : 0.3435268325573882
+Validation Epoch 62, Batch 200 - Loss : 0.34919930534525334
+Total video count: 3783
+Epoch 62, * Video Acc@1 89.610 Video Acc@5 98.128, Loss: 0.362468198001707
+Time taken for Epoch-62 is 554.0375730991364
+
+Epoch 63 started
+Train at epoch 63
+Learning rate is: 5.9604644834995276e-12
+Training Epoch 63, Batch 0, Loss: 0.01518
+Training Epoch 63, Batch 50, Loss: 0.03020
+Training Epoch 63, Batch 100, Loss: 0.03606
+Training Epoch 63, Batch 150, Loss: 0.03338
+Training Epoch 63, Batch 200, Loss: 0.03332
+Training Epoch 63, Batch 250, Loss: 0.03263
+Training Epoch 63, Batch 300, Loss: 0.03275
+Training Epoch 63, Batch 350, Loss: 0.03191
+Training Epoch 63, Batch 400, Loss: 0.03353
+Training Epoch 63, Batch 450, Loss: 0.03475
+Training Epoch 63, Batch 500, Loss: 0.03403
+Training Epoch 63, Batch 550, Loss: 0.03448
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g16_c02.avi is missing 4 frames.
+Clip ../../datasets/UCF101-videos/Videos/TennisSwing/v_TennisSwing_g09_c05.avi is missing 1 frames.
+Clip ../../datasets/UCF101-videos/Videos/SoccerJuggling/v_SoccerJuggling_g24_c06.avi is missing 3 frames.
+Training Epoch: 63, Loss: 0.04188474593001575
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Learning rate dropping to its 2th value to 2.9802322417497638e-12 at epoch 63
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Validation at epoch 63.
+Validation Epoch 63, Batch 0 - Loss : 0.5014768838882446
+Validation Epoch 63, Batch 50 - Loss : 0.330906627553643
+Validation Epoch 63, Batch 100 - Loss : 0.3518698634349252
+Validation Epoch 63, Batch 150 - Loss : 0.36769050819527926
+Validation Epoch 63, Batch 200 - Loss : 0.3725904989159383
+Total video count: 3783
+Epoch 63, * Video Acc@1 89.504 Video Acc@5 98.075, Loss: 0.36395136749751095
+Time taken for Epoch-63 is 550.9114542007446
+
+Epoch 64 started
+Train at epoch 64
+Learning rate is: 2.9802322417497638e-12
+Training Epoch 64, Batch 0, Loss: 0.01141
+Training Epoch 64, Batch 50, Loss: 0.03537
+Training Epoch 64, Batch 100, Loss: 0.04202
+Training Epoch 64, Batch 150, Loss: 0.03702
+Training Epoch 64, Batch 200, Loss: 0.03407
+Training Epoch 64, Batch 250, Loss: 0.03322
+Training Epoch 64, Batch 300, Loss: 0.03462
+Training Epoch 64, Batch 350, Loss: 0.03373
+Training Epoch 64, Batch 400, Loss: 0.03273
+Training Epoch 64, Batch 450, Loss: 0.03210
+Training Epoch 64, Batch 500, Loss: 0.03190
+Training Epoch 64, Batch 550, Loss: 0.03133
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g16_c04.avi is missing 1 frames.
+Clip ../../datasets/UCF101-videos/Videos/TennisSwing/v_TennisSwing_g16_c03.avi is missing 1 frames.
+[237 239 241 243 245 247 249 251 253 255 257 259 261 263 265 267]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c02.avi Failed
+Training Epoch: 64, Loss: 0.04058161147513662
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Learning rate dropping to its 2th value to 1.4901161208748819e-12 at epoch 64
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Validation at epoch 64.
+Validation Epoch 64, Batch 0 - Loss : 0.8571599125862122
+Validation Epoch 64, Batch 50 - Loss : 0.3523146881557563
+Validation Epoch 64, Batch 100 - Loss : 0.3870717541655839
+Validation Epoch 64, Batch 150 - Loss : 0.3679886480333863
+Validation Epoch 64, Batch 200 - Loss : 0.3692384592120753
+Total video count: 3783
+Epoch 64, * Video Acc@1 89.425 Video Acc@5 98.180, Loss: 0.36330160837648007
+Time taken for Epoch-64 is 549.5495979785919
+
+Epoch 65 started
+Train at epoch 65
+Learning rate is: 1.4901161208748819e-12
+Training Epoch 65, Batch 0, Loss: 0.02228
+Training Epoch 65, Batch 50, Loss: 0.02680
+Training Epoch 65, Batch 100, Loss: 0.03026
+Training Epoch 65, Batch 150, Loss: 0.03128
+Training Epoch 65, Batch 200, Loss: 0.03575
+Training Epoch 65, Batch 250, Loss: 0.03509
+Training Epoch 65, Batch 300, Loss: 0.03446
+Training Epoch 65, Batch 350, Loss: 0.03324
+Training Epoch 65, Batch 400, Loss: 0.03368
+Training Epoch 65, Batch 450, Loss: 0.03646
+Training Epoch 65, Batch 500, Loss: 0.03541
+Training Epoch 65, Batch 550, Loss: 0.03603
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c01.avi is missing 7 frames.
+[229 231 233 235 237 239 241 243 245 247 249 251 253 255 257 259]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c02.avi Failed
+[314 316 318 320 322 324 326 328 330 332 334 336 338 340 342 344]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c03.avi Failed
+Training Epoch: 65, Loss: 0.04145482988342474
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Learning rate dropping to its 2th value to 7.450580604374409e-13 at epoch 65
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Validation at epoch 65.
+Validation Epoch 65, Batch 0 - Loss : 0.3020104765892029
+Validation Epoch 65, Batch 50 - Loss : 0.404089645099114
+Validation Epoch 65, Batch 100 - Loss : 0.35651177592059174
+Validation Epoch 65, Batch 150 - Loss : 0.3763091409400056
+Validation Epoch 65, Batch 200 - Loss : 0.3668281155344752
+Total video count: 3783
+Epoch 65, * Video Acc@1 89.531 Video Acc@5 98.049, Loss: 0.364534769056194
+Time taken for Epoch-65 is 550.2667510509491
+
+Learning rate is very low now, stopping the training.
+
+real	532m52.054s
+user	2410m53.126s
+sys	469m2.376s
