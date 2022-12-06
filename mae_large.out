@@ -1,0 +1,1024 @@
+CUDA_VISIBLE_DEVICES=0
+Mon Dec  5 10:51:18 2022       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 520.61.05    Driver Version: 520.61.05    CUDA Version: 11.8     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA RTX A6000    On   | 00000000:86:00.0 Off |                  Off |
+| 30%   26C    P8    24W / 300W |      1MiB / 49140MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+Run ID: mae_large
+Architecture: videoMAE
+np : <module 'numpy' from '/home/joefio/.conda/envs/spad/lib/python3.10/site-packages/numpy/__init__.py'>
+num_classes : 102
+num_frames : 16
+fix_skip : 2
+num_modes : 5
+num_skips : 1
+data_percentage : 1.0
+transformer_size : large
+batch_size : 4
+v_batch_size : 4
+learning_rate : 0.0001
+num_workers : 4
+num_epochs : 100
+warmup_array : [0.010000001, 0.25750000100000003, 0.505000001, 0.7525000009999999, 1.000000001]
+warmup : 5
+scheduled_drop : 2
+lr_patience : 0
+patch_size : 16
+hflip : [0]
+cropping_facs : [0.8]
+RGB : True
+normalize : False
+reso_h : 224
+reso_w : 224
+ori_reso_h : 240
+ori_reso_w : 320
+min_crop_factor_training : 0.6
+wandb : False
+Removing key head.weight from pretrained checkpoint
+Removing key head.bias from pretrained checkpoint
+ft_model freshly initialized! Pretrained: True
+Only 1 GPU is available
+Train dataset length: 9537
+Train dataset steps per epoch: 2384.25
+Validation dataset length: 3783
+Validation dataset steps per epoch: 945.75
+Num skips [1]
+Base learning rate 0.0001
+Scheduler patient 0
+Scheduler drop 2
+Epoch 1 started
+Train at epoch 1
+Learning rate is: 2.5750000100000004e-05
+Training Epoch 1, Batch 0, Loss: 4.62497
+Training Epoch 1, Batch 50, Loss: 4.61214
+Training Epoch 1, Batch 100, Loss: 4.57925
+Training Epoch 1, Batch 150, Loss: 4.54375
+Training Epoch 1, Batch 200, Loss: 4.50529
+Training Epoch 1, Batch 250, Loss: 4.46091
+Training Epoch 1, Batch 300, Loss: 4.41727
+Training Epoch 1, Batch 350, Loss: 4.37323
+Training Epoch 1, Batch 400, Loss: 4.32689
+Training Epoch 1, Batch 450, Loss: 4.27776
+Training Epoch 1, Batch 500, Loss: 4.22892
+Training Epoch 1, Batch 550, Loss: 4.18224
+Training Epoch 1, Batch 600, Loss: 4.13385
+Training Epoch 1, Batch 650, Loss: 4.08232
+Training Epoch 1, Batch 700, Loss: 4.03459
+Training Epoch 1, Batch 750, Loss: 3.98458
+Training Epoch 1, Batch 800, Loss: 3.93395
+Training Epoch 1, Batch 850, Loss: 3.87998
+Training Epoch 1, Batch 900, Loss: 3.82767
+Training Epoch 1, Batch 950, Loss: 3.77617
+Training Epoch 1, Batch 1000, Loss: 3.72586
+Training Epoch 1, Batch 1050, Loss: 3.67700
+Training Epoch 1, Batch 1100, Loss: 3.62629
+Training Epoch 1, Batch 1150, Loss: 3.57942
+Training Epoch 1, Batch 1200, Loss: 3.53288
+Training Epoch 1, Batch 1250, Loss: 3.48743
+Training Epoch 1, Batch 1300, Loss: 3.43939
+Training Epoch 1, Batch 1350, Loss: 3.39301
+Training Epoch 1, Batch 1400, Loss: 3.34356
+Training Epoch 1, Batch 1450, Loss: 3.29611
+Training Epoch 1, Batch 1500, Loss: 3.24752
+Training Epoch 1, Batch 1550, Loss: 3.19774
+Training Epoch 1, Batch 1600, Loss: 3.14921
+Training Epoch 1, Batch 1650, Loss: 3.10303
+Training Epoch 1, Batch 1700, Loss: 3.05775
+Training Epoch 1, Batch 1750, Loss: 3.01230
+Training Epoch 1, Batch 1800, Loss: 2.96742
+Training Epoch 1, Batch 1850, Loss: 2.92365
+Training Epoch 1, Batch 1900, Loss: 2.87908
+Training Epoch 1, Batch 1950, Loss: 2.83646
+Training Epoch 1, Batch 2000, Loss: 2.79639
+Training Epoch 1, Batch 2050, Loss: 2.75345
+Training Epoch 1, Batch 2100, Loss: 2.71364
+Training Epoch 1, Batch 2150, Loss: 2.67584
+Training Epoch 1, Batch 2200, Loss: 2.63867
+Training Epoch 1, Batch 2250, Loss: 2.60401
+Training Epoch 1, Batch 2300, Loss: 2.56742
+Training Epoch 1, Batch 2350, Loss: 2.53092
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g16_c01.avi is missing 5 frames.
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c02.avi is missing 2 frames.
+Training Epoch: 1, Loss: 2.5065161784364993
+Validation at epoch 1.
+Validation Epoch 1, Batch 0 - Loss : 0.736680269241333
+Validation Epoch 1, Batch 50 - Loss : 0.8775286142732582
+Validation Epoch 1, Batch 100 - Loss : 0.9176065204757275
+Validation Epoch 1, Batch 150 - Loss : 0.9407180166797132
+Validation Epoch 1, Batch 200 - Loss : 0.9136231725488729
+Validation Epoch 1, Batch 250 - Loss : 0.9156854967197099
+Validation Epoch 1, Batch 300 - Loss : 0.9099739300848242
+Validation Epoch 1, Batch 350 - Loss : 0.9131126976930178
+Validation Epoch 1, Batch 400 - Loss : 0.9061870081466332
+Validation Epoch 1, Batch 450 - Loss : 0.9131928386286463
+Validation Epoch 1, Batch 500 - Loss : 0.9199140729780445
+Validation Epoch 1, Batch 550 - Loss : 0.9206196513236543
+Validation Epoch 1, Batch 600 - Loss : 0.9221778258606915
+Validation Epoch 1, Batch 650 - Loss : 0.9190286923022497
+Validation Epoch 1, Batch 700 - Loss : 0.9180640855036176
+Validation Epoch 1, Batch 750 - Loss : 0.9192354786253166
+Validation Epoch 1, Batch 800 - Loss : 0.9204100218605012
+Validation Epoch 1, Batch 850 - Loss : 0.9211443467580054
+Validation Epoch 1, Batch 900 - Loss : 0.9228648059442226
+Total video count: 3783
+Epoch 1, * Video Acc@1 85.597 Video Acc@5 98.309, Loss: 0.9237080332025666
+++++++++++++++++++++++++++++++
+Epoch 1 is the best model till now for mae_large!
+++++++++++++++++++++++++++++++
+Time taken for Epoch-1 is 3377.768250465393
+
+Epoch 2 started
+Train at epoch 2
+Learning rate is: 5.05000001e-05
+Training Epoch 2, Batch 0, Loss: 0.84545
+Training Epoch 2, Batch 50, Loss: 0.89734
+Training Epoch 2, Batch 100, Loss: 0.95635
+Training Epoch 2, Batch 150, Loss: 0.96762
+Training Epoch 2, Batch 200, Loss: 1.01388
+Training Epoch 2, Batch 250, Loss: 1.01830
+Training Epoch 2, Batch 300, Loss: 1.03621
+Training Epoch 2, Batch 350, Loss: 1.01855
+Training Epoch 2, Batch 400, Loss: 0.98383
+Training Epoch 2, Batch 450, Loss: 0.96721
+Training Epoch 2, Batch 500, Loss: 0.95136
+Training Epoch 2, Batch 550, Loss: 0.95485
+Training Epoch 2, Batch 600, Loss: 0.94337
+Training Epoch 2, Batch 650, Loss: 0.93592
+Training Epoch 2, Batch 700, Loss: 0.91763
+Training Epoch 2, Batch 750, Loss: 0.89681
+Training Epoch 2, Batch 800, Loss: 0.87652
+Training Epoch 2, Batch 850, Loss: 0.85605
+Training Epoch 2, Batch 900, Loss: 0.83446
+Training Epoch 2, Batch 950, Loss: 0.81495
+Training Epoch 2, Batch 1000, Loss: 0.79475
+Training Epoch 2, Batch 1050, Loss: 0.78027
+Training Epoch 2, Batch 1100, Loss: 0.77477
+Training Epoch 2, Batch 1150, Loss: 0.77539
+Training Epoch 2, Batch 1200, Loss: 0.76595
+Training Epoch 2, Batch 1250, Loss: 0.76182
+Training Epoch 2, Batch 1300, Loss: 0.75412
+Training Epoch 2, Batch 1350, Loss: 0.74490
+Training Epoch 2, Batch 1400, Loss: 0.75025
+Training Epoch 2, Batch 1450, Loss: 0.74430
+Training Epoch 2, Batch 1500, Loss: 0.73794
+Training Epoch 2, Batch 1550, Loss: 0.72763
+Training Epoch 2, Batch 1600, Loss: 0.71550
+Training Epoch 2, Batch 1650, Loss: 0.70250
+Training Epoch 2, Batch 1700, Loss: 0.69404
+Training Epoch 2, Batch 1750, Loss: 0.68569
+Training Epoch 2, Batch 1800, Loss: 0.67942
+Training Epoch 2, Batch 1850, Loss: 0.67618
+Training Epoch 2, Batch 1900, Loss: 0.67316
+Training Epoch 2, Batch 1950, Loss: 0.67146
+Training Epoch 2, Batch 2000, Loss: 0.66693
+Training Epoch 2, Batch 2050, Loss: 0.66092
+Training Epoch 2, Batch 2100, Loss: 0.65751
+Training Epoch 2, Batch 2150, Loss: 0.65613
+Training Epoch 2, Batch 2200, Loss: 0.65091
+Training Epoch 2, Batch 2250, Loss: 0.64594
+Training Epoch 2, Batch 2300, Loss: 0.63880
+Training Epoch 2, Batch 2350, Loss: 0.63235
+Clip ../../datasets/UCF101-videos/Videos/SoccerJuggling/v_SoccerJuggling_g24_c05.avi is missing 1 frames.
+[309 311 313 315 317 319 321 323 325 327 329 331 333 335 337 339]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c03.avi Failed
+Training Epoch: 2, Loss: 0.6295332855523508
+Time taken for Epoch-2 is 2983.3366074562073
+
+Epoch 3 started
+Train at epoch 3
+Learning rate is: 7.525000009999999e-05
+Training Epoch 3, Batch 0, Loss: 0.32874
+Training Epoch 3, Batch 50, Loss: 0.44903
+Training Epoch 3, Batch 100, Loss: 0.41074
+Training Epoch 3, Batch 150, Loss: 0.45355
+Training Epoch 3, Batch 200, Loss: 0.52965
+Training Epoch 3, Batch 250, Loss: 0.60167
+Training Epoch 3, Batch 300, Loss: 0.64760
+Training Epoch 3, Batch 350, Loss: 0.64314
+Training Epoch 3, Batch 400, Loss: 0.65108
+Training Epoch 3, Batch 450, Loss: 0.64476
+Training Epoch 3, Batch 500, Loss: 0.64252
+Training Epoch 3, Batch 550, Loss: 0.65135
+Training Epoch 3, Batch 600, Loss: 0.64552
+Training Epoch 3, Batch 650, Loss: 0.64028
+Training Epoch 3, Batch 700, Loss: 0.65304
+Training Epoch 3, Batch 750, Loss: 0.66188
+Training Epoch 3, Batch 800, Loss: 0.65416
+Training Epoch 3, Batch 850, Loss: 0.64556
+Training Epoch 3, Batch 900, Loss: 0.63118
+Training Epoch 3, Batch 950, Loss: 0.63275
+Training Epoch 3, Batch 1000, Loss: 0.63112
+Training Epoch 3, Batch 1050, Loss: 0.63042
+Training Epoch 3, Batch 1100, Loss: 0.62732
+Training Epoch 3, Batch 1150, Loss: 0.63217
+Training Epoch 3, Batch 1200, Loss: 0.63379
+Training Epoch 3, Batch 1250, Loss: 0.63362
+Training Epoch 3, Batch 1300, Loss: 0.62731
+Training Epoch 3, Batch 1350, Loss: 0.62634
+Training Epoch 3, Batch 1400, Loss: 0.63129
+Training Epoch 3, Batch 1450, Loss: 0.63202
+Training Epoch 3, Batch 1500, Loss: 0.63041
+Training Epoch 3, Batch 1550, Loss: 0.63416
+Training Epoch 3, Batch 1600, Loss: 0.63363
+Training Epoch 3, Batch 1650, Loss: 0.63002
+Training Epoch 3, Batch 1700, Loss: 0.62463
+Training Epoch 3, Batch 1750, Loss: 0.61960
+Training Epoch 3, Batch 1800, Loss: 0.61423
+Training Epoch 3, Batch 1850, Loss: 0.61146
+Training Epoch 3, Batch 1900, Loss: 0.60627
+Training Epoch 3, Batch 1950, Loss: 0.60352
+Training Epoch 3, Batch 2000, Loss: 0.60167
+Training Epoch 3, Batch 2050, Loss: 0.59898
+Training Epoch 3, Batch 2100, Loss: 0.59501
+Training Epoch 3, Batch 2150, Loss: 0.59294
+Training Epoch 3, Batch 2200, Loss: 0.59044
+Training Epoch 3, Batch 2250, Loss: 0.58493
+Training Epoch 3, Batch 2300, Loss: 0.58119
+Training Epoch 3, Batch 2350, Loss: 0.57890
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g13_c04.avi is missing 1 frames.
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c01.avi is missing 3 frames.
+[256 258 260 262 264 266 268 270 272 274 276 278 280 282 284 286]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c02.avi Failed
+Training Epoch: 3, Loss: 0.5791732956815425
+Validation at epoch 3.
+Validation Epoch 3, Batch 0 - Loss : 0.6565734148025513
+Validation Epoch 3, Batch 50 - Loss : 0.49610648569011806
+Validation Epoch 3, Batch 100 - Loss : 0.6140585198980009
+Validation Epoch 3, Batch 150 - Loss : 0.5974477469143982
+Validation Epoch 3, Batch 200 - Loss : 0.5799666456275837
+Validation Epoch 3, Batch 250 - Loss : 0.589898018481811
+Validation Epoch 3, Batch 300 - Loss : 0.6020650282669255
+Validation Epoch 3, Batch 350 - Loss : 0.6170290812473224
+Validation Epoch 3, Batch 400 - Loss : 0.6061595622926226
+Validation Epoch 3, Batch 450 - Loss : 0.6067319638364248
+Validation Epoch 3, Batch 500 - Loss : 0.6185788694581392
+Validation Epoch 3, Batch 550 - Loss : 0.6286662497824758
+Validation Epoch 3, Batch 600 - Loss : 0.632021120421669
+Validation Epoch 3, Batch 650 - Loss : 0.623894143225153
+Validation Epoch 3, Batch 700 - Loss : 0.6163487861912097
+Validation Epoch 3, Batch 750 - Loss : 0.607547873453164
+Validation Epoch 3, Batch 800 - Loss : 0.6110080613291935
+Validation Epoch 3, Batch 850 - Loss : 0.6100331123012144
+Validation Epoch 3, Batch 900 - Loss : 0.6193750910460949
+Total video count: 3783
+Epoch 3, * Video Acc@1 83.007 Video Acc@5 97.040, Loss: 0.6193914405655029
+Time taken for Epoch-3 is 3365.562376499176
+
+Epoch 4 started
+Train at epoch 4
+Learning rate is: 0.00010000000010000001
+Training Epoch 4, Batch 0, Loss: 0.05980
+Training Epoch 4, Batch 50, Loss: 0.36443
+Training Epoch 4, Batch 100, Loss: 0.60605
+Training Epoch 4, Batch 150, Loss: 0.62720
+Training Epoch 4, Batch 200, Loss: 0.64299
+Training Epoch 4, Batch 250, Loss: 0.69883
+Training Epoch 4, Batch 300, Loss: 0.70093
+Training Epoch 4, Batch 350, Loss: 0.73150
+Training Epoch 4, Batch 400, Loss: 0.72719
+Training Epoch 4, Batch 450, Loss: 0.69843
+Training Epoch 4, Batch 500, Loss: 0.68148
+Training Epoch 4, Batch 550, Loss: 0.65837
+Training Epoch 4, Batch 600, Loss: 0.65273
+Training Epoch 4, Batch 650, Loss: 0.64269
+Training Epoch 4, Batch 700, Loss: 0.66276
+Training Epoch 4, Batch 750, Loss: 0.66786
+Training Epoch 4, Batch 800, Loss: 0.67753
+Training Epoch 4, Batch 850, Loss: 0.67168
+Training Epoch 4, Batch 900, Loss: 0.67755
+Training Epoch 4, Batch 950, Loss: 0.69424
+Training Epoch 4, Batch 1000, Loss: 0.70242
+Training Epoch 4, Batch 1050, Loss: 0.70400
+Training Epoch 4, Batch 1100, Loss: 0.70273
+Training Epoch 4, Batch 1150, Loss: 0.70352
+Training Epoch 4, Batch 1200, Loss: 0.70027
+Training Epoch 4, Batch 1250, Loss: 0.69946
+Training Epoch 4, Batch 1300, Loss: 0.69038
+Training Epoch 4, Batch 1350, Loss: 0.68790
+Training Epoch 4, Batch 1400, Loss: 0.68269
+Training Epoch 4, Batch 1450, Loss: 0.68101
+Training Epoch 4, Batch 1500, Loss: 0.67078
+Training Epoch 4, Batch 1550, Loss: 0.67229
+Training Epoch 4, Batch 1600, Loss: 0.66951
+Training Epoch 4, Batch 1650, Loss: 0.67202
+Training Epoch 4, Batch 1700, Loss: 0.67641
+Training Epoch 4, Batch 1750, Loss: 0.68351
+Training Epoch 4, Batch 1800, Loss: 0.68311
+Training Epoch 4, Batch 1850, Loss: 0.68218
+Training Epoch 4, Batch 1900, Loss: 0.68885
+Training Epoch 4, Batch 1950, Loss: 0.68849
+Training Epoch 4, Batch 2000, Loss: 0.68302
+Training Epoch 4, Batch 2050, Loss: 0.67992
+Training Epoch 4, Batch 2100, Loss: 0.67729
+Training Epoch 4, Batch 2150, Loss: 0.67097
+Training Epoch 4, Batch 2200, Loss: 0.66725
+Training Epoch 4, Batch 2250, Loss: 0.66921
+Training Epoch 4, Batch 2300, Loss: 0.66483
+Training Epoch 4, Batch 2350, Loss: 0.65898
+Training Epoch: 4, Loss: 0.6602485723309297
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Learning rate dropping to its 2th value to 5.0000000050000005e-05 at epoch 4
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Time taken for Epoch-4 is 2975.9728684425354
+
+Epoch 5 started
+Train at epoch 5
+Learning rate is: 5.0000000050000005e-05
+Training Epoch 5, Batch 0, Loss: 0.02810
+Training Epoch 5, Batch 50, Loss: 0.50984
+Training Epoch 5, Batch 100, Loss: 0.41703
+Training Epoch 5, Batch 150, Loss: 0.37831
+Training Epoch 5, Batch 200, Loss: 0.34654
+Training Epoch 5, Batch 250, Loss: 0.33172
+Training Epoch 5, Batch 300, Loss: 0.31084
+Training Epoch 5, Batch 350, Loss: 0.30222
+Training Epoch 5, Batch 400, Loss: 0.28896
+Training Epoch 5, Batch 450, Loss: 0.27155
+Training Epoch 5, Batch 500, Loss: 0.26719
+Training Epoch 5, Batch 550, Loss: 0.25535
+Training Epoch 5, Batch 600, Loss: 0.26197
+Training Epoch 5, Batch 650, Loss: 0.25510
+Training Epoch 5, Batch 700, Loss: 0.25188
+Training Epoch 5, Batch 750, Loss: 0.25523
+Training Epoch 5, Batch 800, Loss: 0.25396
+Training Epoch 5, Batch 850, Loss: 0.24968
+Training Epoch 5, Batch 900, Loss: 0.24979
+Training Epoch 5, Batch 950, Loss: 0.24775
+Training Epoch 5, Batch 1000, Loss: 0.24296
+Training Epoch 5, Batch 1050, Loss: 0.24099
+Training Epoch 5, Batch 1100, Loss: 0.23850
+Training Epoch 5, Batch 1150, Loss: 0.23688
+Training Epoch 5, Batch 1200, Loss: 0.23972
+Training Epoch 5, Batch 1250, Loss: 0.23999
+Training Epoch 5, Batch 1300, Loss: 0.23734
+Training Epoch 5, Batch 1350, Loss: 0.23799
+Training Epoch 5, Batch 1400, Loss: 0.24333
+Training Epoch 5, Batch 1450, Loss: 0.24370
+Training Epoch 5, Batch 1500, Loss: 0.24284
+Training Epoch 5, Batch 1550, Loss: 0.24260
+Training Epoch 5, Batch 1600, Loss: 0.24369
+Training Epoch 5, Batch 1650, Loss: 0.24752
+Training Epoch 5, Batch 1700, Loss: 0.24616
+Training Epoch 5, Batch 1750, Loss: 0.24582
+Training Epoch 5, Batch 1800, Loss: 0.24623
+Training Epoch 5, Batch 1850, Loss: 0.24574
+Training Epoch 5, Batch 1900, Loss: 0.24541
+Training Epoch 5, Batch 1950, Loss: 0.24569
+Training Epoch 5, Batch 2000, Loss: 0.25074
+Training Epoch 5, Batch 2050, Loss: 0.25106
+Training Epoch 5, Batch 2100, Loss: 0.25218
+Training Epoch 5, Batch 2150, Loss: 0.25036
+Training Epoch 5, Batch 2200, Loss: 0.25062
+Training Epoch 5, Batch 2250, Loss: 0.24942
+Training Epoch 5, Batch 2300, Loss: 0.24862
+Training Epoch 5, Batch 2350, Loss: 0.24782
+Clip ../../datasets/UCF101-videos/Videos/TennisSwing/v_TennisSwing_g20_c02.avi is missing 1 frames.
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g13_c03.avi is missing 1 frames.
+Training Epoch: 5, Loss: 0.2479014752075404
+Validation at epoch 5.
+Validation Epoch 5, Batch 0 - Loss : 0.45911240577697754
+Validation Epoch 5, Batch 50 - Loss : 0.6515740986146471
+Validation Epoch 5, Batch 100 - Loss : 0.6496335231505408
+Validation Epoch 5, Batch 150 - Loss : 0.6392445122662759
+Validation Epoch 5, Batch 200 - Loss : 0.6673473612803836
+Validation Epoch 5, Batch 250 - Loss : 0.6656920150649619
+Validation Epoch 5, Batch 300 - Loss : 0.6482641073144922
+Validation Epoch 5, Batch 350 - Loss : 0.6418907930450966
+Validation Epoch 5, Batch 400 - Loss : 0.6295691010672274
+Validation Epoch 5, Batch 450 - Loss : 0.6102974400803975
+Validation Epoch 5, Batch 500 - Loss : 0.627656927358307
+Validation Epoch 5, Batch 550 - Loss : 0.6344977761432866
+Validation Epoch 5, Batch 600 - Loss : 0.6321037959391886
+Validation Epoch 5, Batch 650 - Loss : 0.6376677169110454
+Validation Epoch 5, Batch 700 - Loss : 0.6467612640060001
+Validation Epoch 5, Batch 750 - Loss : 0.6454350506200439
+Validation Epoch 5, Batch 800 - Loss : 0.6529110236591619
+Validation Epoch 5, Batch 850 - Loss : 0.6459703907867419
+Validation Epoch 5, Batch 900 - Loss : 0.6545566488801606
+Total video count: 3783
+Epoch 5, * Video Acc@1 82.558 Video Acc@5 95.560, Loss: 0.6421956786872075
+Time taken for Epoch-5 is 3358.196580171585
+
+Epoch 6 started
+Train at epoch 6
+Learning rate is: 5.0000000050000005e-05
+Training Epoch 6, Batch 0, Loss: 0.02507
+Training Epoch 6, Batch 50, Loss: 0.19418
+Training Epoch 6, Batch 100, Loss: 0.20553
+Training Epoch 6, Batch 150, Loss: 0.18215
+Training Epoch 6, Batch 200, Loss: 0.21304
+Training Epoch 6, Batch 250, Loss: 0.21228
+Training Epoch 6, Batch 300, Loss: 0.21461
+Training Epoch 6, Batch 350, Loss: 0.20293
+Training Epoch 6, Batch 400, Loss: 0.20571
+Training Epoch 6, Batch 450, Loss: 0.21931
+Training Epoch 6, Batch 500, Loss: 0.22454
+Training Epoch 6, Batch 550, Loss: 0.23099
+Training Epoch 6, Batch 600, Loss: 0.22698
+Training Epoch 6, Batch 650, Loss: 0.22461
+Training Epoch 6, Batch 700, Loss: 0.21956
+Training Epoch 6, Batch 750, Loss: 0.22035
+Training Epoch 6, Batch 800, Loss: 0.22737
+Training Epoch 6, Batch 850, Loss: 0.22846
+Training Epoch 6, Batch 900, Loss: 0.22650
+Training Epoch 6, Batch 950, Loss: 0.23220
+Training Epoch 6, Batch 1000, Loss: 0.22887
+Training Epoch 6, Batch 1050, Loss: 0.22775
+Training Epoch 6, Batch 1100, Loss: 0.22785
+Training Epoch 6, Batch 1150, Loss: 0.22878
+Training Epoch 6, Batch 1200, Loss: 0.23006
+Training Epoch 6, Batch 1250, Loss: 0.22788
+Training Epoch 6, Batch 1300, Loss: 0.22536
+Training Epoch 6, Batch 1350, Loss: 0.22067
+Training Epoch 6, Batch 1400, Loss: 0.22159
+Training Epoch 6, Batch 1450, Loss: 0.22226
+Training Epoch 6, Batch 1500, Loss: 0.22130
+Training Epoch 6, Batch 1550, Loss: 0.22296
+Training Epoch 6, Batch 1600, Loss: 0.22229
+Training Epoch 6, Batch 1650, Loss: 0.22131
+Training Epoch 6, Batch 1700, Loss: 0.22022
+Training Epoch 6, Batch 1750, Loss: 0.21871
+Training Epoch 6, Batch 1800, Loss: 0.21945
+Training Epoch 6, Batch 1850, Loss: 0.22183
+Training Epoch 6, Batch 1900, Loss: 0.22095
+Training Epoch 6, Batch 1950, Loss: 0.21959
+Training Epoch 6, Batch 2000, Loss: 0.21901
+Training Epoch 6, Batch 2050, Loss: 0.21785
+Training Epoch 6, Batch 2100, Loss: 0.21748
+Training Epoch 6, Batch 2150, Loss: 0.21796
+Training Epoch 6, Batch 2200, Loss: 0.21808
+Training Epoch 6, Batch 2250, Loss: 0.21912
+Training Epoch 6, Batch 2300, Loss: 0.21863
+Training Epoch 6, Batch 2350, Loss: 0.21751
+[241 243 245 247 249 251 253 255 257 259 261 263 265 267 269 271]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c02.avi Failed
+Clip ../../datasets/UCF101-videos/Videos/SoccerJuggling/v_SoccerJuggling_g24_c06.avi is missing 3 frames.
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g13_c04.avi is missing 1 frames.
+Training Epoch: 6, Loss: 0.2176561653596716
+Time taken for Epoch-6 is 2974.7868869304657
+
+Epoch 7 started
+Train at epoch 7
+Learning rate is: 5.0000000050000005e-05
+Training Epoch 7, Batch 0, Loss: 0.29629
+Training Epoch 7, Batch 50, Loss: 0.18924
+Training Epoch 7, Batch 100, Loss: 0.21433
+Training Epoch 7, Batch 150, Loss: 0.18032
+Training Epoch 7, Batch 200, Loss: 0.17902
+Training Epoch 7, Batch 250, Loss: 0.16627
+Training Epoch 7, Batch 300, Loss: 0.14679
+Training Epoch 7, Batch 350, Loss: 0.14449
+Training Epoch 7, Batch 400, Loss: 0.16309
+Training Epoch 7, Batch 450, Loss: 0.17431
+Training Epoch 7, Batch 500, Loss: 0.17771
+Training Epoch 7, Batch 550, Loss: 0.17955
+Training Epoch 7, Batch 600, Loss: 0.17972
+Training Epoch 7, Batch 650, Loss: 0.18751
+Training Epoch 7, Batch 700, Loss: 0.18906
+Training Epoch 7, Batch 750, Loss: 0.20032
+Training Epoch 7, Batch 800, Loss: 0.20553
+Training Epoch 7, Batch 850, Loss: 0.20402
+Training Epoch 7, Batch 900, Loss: 0.20584
+Training Epoch 7, Batch 950, Loss: 0.21009
+Training Epoch 7, Batch 1000, Loss: 0.21052
+Training Epoch 7, Batch 1050, Loss: 0.21536
+Training Epoch 7, Batch 1100, Loss: 0.21219
+Training Epoch 7, Batch 1150, Loss: 0.21565
+Training Epoch 7, Batch 1200, Loss: 0.21524
+Training Epoch 7, Batch 1250, Loss: 0.21573
+Training Epoch 7, Batch 1300, Loss: 0.21552
+Training Epoch 7, Batch 1350, Loss: 0.22061
+Training Epoch 7, Batch 1400, Loss: 0.21715
+Training Epoch 7, Batch 1450, Loss: 0.21441
+Training Epoch 7, Batch 1500, Loss: 0.21068
+Training Epoch 7, Batch 1550, Loss: 0.21206
+Training Epoch 7, Batch 1600, Loss: 0.21269
+Training Epoch 7, Batch 1650, Loss: 0.21309
+Training Epoch 7, Batch 1700, Loss: 0.21247
+Training Epoch 7, Batch 1750, Loss: 0.21123
+Training Epoch 7, Batch 1800, Loss: 0.21291
+Training Epoch 7, Batch 1850, Loss: 0.21126
+Training Epoch 7, Batch 1900, Loss: 0.21112
+Training Epoch 7, Batch 1950, Loss: 0.21054
+Training Epoch 7, Batch 2000, Loss: 0.21125
+Training Epoch 7, Batch 2050, Loss: 0.20989
+Training Epoch 7, Batch 2100, Loss: 0.20817
+Training Epoch 7, Batch 2150, Loss: 0.20913
+Training Epoch 7, Batch 2200, Loss: 0.20869
+Training Epoch 7, Batch 2250, Loss: 0.20776
+Training Epoch 7, Batch 2300, Loss: 0.20945
+Training Epoch 7, Batch 2350, Loss: 0.20845
+[311 313 315 317 319 321 323 325 327 329 331 333 335 337 339 341]
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g16_c06.avi Failed
+Training Epoch: 7, Loss: 0.20787136064221462
+Time taken for Epoch-7 is 2975.153117418289
+
+Epoch 8 started
+Train at epoch 8
+Learning rate is: 5.0000000050000005e-05
+Training Epoch 8, Batch 0, Loss: 0.00682
+Training Epoch 8, Batch 50, Loss: 0.18750
+Training Epoch 8, Batch 100, Loss: 0.19157
+Training Epoch 8, Batch 150, Loss: 0.20357
+Training Epoch 8, Batch 200, Loss: 0.17921
+Training Epoch 8, Batch 250, Loss: 0.17743
+Training Epoch 8, Batch 300, Loss: 0.19547
+Training Epoch 8, Batch 350, Loss: 0.19843
+Training Epoch 8, Batch 400, Loss: 0.20344
+Training Epoch 8, Batch 450, Loss: 0.20885
+Training Epoch 8, Batch 500, Loss: 0.21516
+Training Epoch 8, Batch 550, Loss: 0.20993
+Training Epoch 8, Batch 600, Loss: 0.20416
+Training Epoch 8, Batch 650, Loss: 0.20741
+Training Epoch 8, Batch 700, Loss: 0.20168
+Training Epoch 8, Batch 750, Loss: 0.19969
+Training Epoch 8, Batch 800, Loss: 0.20350
+Training Epoch 8, Batch 850, Loss: 0.20191
+Training Epoch 8, Batch 900, Loss: 0.20200
+Training Epoch 8, Batch 950, Loss: 0.19931
+Training Epoch 8, Batch 1000, Loss: 0.19496
+Training Epoch 8, Batch 1050, Loss: 0.19142
+Training Epoch 8, Batch 1100, Loss: 0.18771
+Training Epoch 8, Batch 1150, Loss: 0.18872
+Training Epoch 8, Batch 1200, Loss: 0.18442
+Training Epoch 8, Batch 1250, Loss: 0.18290
+Training Epoch 8, Batch 1300, Loss: 0.18163
+Training Epoch 8, Batch 1350, Loss: 0.17854
+Training Epoch 8, Batch 1400, Loss: 0.17617
+Training Epoch 8, Batch 1450, Loss: 0.18030
+Training Epoch 8, Batch 1500, Loss: 0.18176
+Training Epoch 8, Batch 1550, Loss: 0.18393
+Training Epoch 8, Batch 1600, Loss: 0.18675
+Training Epoch 8, Batch 1650, Loss: 0.18695
+Training Epoch 8, Batch 1700, Loss: 0.18544
+Training Epoch 8, Batch 1750, Loss: 0.18471
+Training Epoch 8, Batch 1800, Loss: 0.18343
+Training Epoch 8, Batch 1850, Loss: 0.18326
+Training Epoch 8, Batch 1900, Loss: 0.18255
+Training Epoch 8, Batch 1950, Loss: 0.18590
+Training Epoch 8, Batch 2000, Loss: 0.18451
+Training Epoch 8, Batch 2050, Loss: 0.18366
+Training Epoch 8, Batch 2100, Loss: 0.18219
+Training Epoch 8, Batch 2150, Loss: 0.18272
+Training Epoch 8, Batch 2200, Loss: 0.18234
+Training Epoch 8, Batch 2250, Loss: 0.18229
+Training Epoch 8, Batch 2300, Loss: 0.18143
+Training Epoch 8, Batch 2350, Loss: 0.18029
+Training Epoch: 8, Loss: 0.18058075990524938
+Time taken for Epoch-8 is 2975.165960788727
+
+Epoch 9 started
+Train at epoch 9
+Learning rate is: 5.0000000050000005e-05
+Training Epoch 9, Batch 0, Loss: 0.00538
+Training Epoch 9, Batch 50, Loss: 0.12196
+Training Epoch 9, Batch 100, Loss: 0.12554
+Training Epoch 9, Batch 150, Loss: 0.13470
+Training Epoch 9, Batch 200, Loss: 0.14938
+Training Epoch 9, Batch 250, Loss: 0.13665
+Training Epoch 9, Batch 300, Loss: 0.13349
+Training Epoch 9, Batch 350, Loss: 0.14211
+Training Epoch 9, Batch 400, Loss: 0.14787
+Training Epoch 9, Batch 450, Loss: 0.14622
+Training Epoch 9, Batch 500, Loss: 0.13991
+Training Epoch 9, Batch 550, Loss: 0.14695
+Training Epoch 9, Batch 600, Loss: 0.14859
+Training Epoch 9, Batch 650, Loss: 0.15127
+Training Epoch 9, Batch 700, Loss: 0.16854
+Training Epoch 9, Batch 750, Loss: 0.17333
+Training Epoch 9, Batch 800, Loss: 0.17801
+Training Epoch 9, Batch 850, Loss: 0.17148
+Training Epoch 9, Batch 900, Loss: 0.16770
+Training Epoch 9, Batch 950, Loss: 0.16954
+Training Epoch 9, Batch 1000, Loss: 0.17273
+Training Epoch 9, Batch 1050, Loss: 0.17471
+Training Epoch 9, Batch 1100, Loss: 0.17741
+Training Epoch 9, Batch 1150, Loss: 0.17937
+Training Epoch 9, Batch 1200, Loss: 0.17524
+Training Epoch 9, Batch 1250, Loss: 0.17381
+Training Epoch 9, Batch 1300, Loss: 0.17395
+Training Epoch 9, Batch 1350, Loss: 0.17379
+Training Epoch 9, Batch 1400, Loss: 0.17637
+Training Epoch 9, Batch 1450, Loss: 0.17821
+Training Epoch 9, Batch 1500, Loss: 0.18004
+Training Epoch 9, Batch 1550, Loss: 0.17993
+Training Epoch 9, Batch 1600, Loss: 0.18155
+Training Epoch 9, Batch 1650, Loss: 0.18394
+Training Epoch 9, Batch 1700, Loss: 0.18486
+Training Epoch 9, Batch 1750, Loss: 0.18305
+Training Epoch 9, Batch 1800, Loss: 0.18175
+Training Epoch 9, Batch 1850, Loss: 0.17985
+Training Epoch 9, Batch 1900, Loss: 0.18430
+Training Epoch 9, Batch 1950, Loss: 0.18751
+Training Epoch 9, Batch 2000, Loss: 0.18489
+Training Epoch 9, Batch 2050, Loss: 0.18259
+Training Epoch 9, Batch 2100, Loss: 0.18070
+Training Epoch 9, Batch 2150, Loss: 0.18001
+Training Epoch 9, Batch 2200, Loss: 0.18070
+Training Epoch 9, Batch 2250, Loss: 0.17969
+Training Epoch 9, Batch 2300, Loss: 0.17978
+Training Epoch 9, Batch 2350, Loss: 0.17872
+[251 253 255 257 259 261 263 265 267 269 271 273 275 277 279 281]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c01.avi Failed
+[229 231 233 235 237 239 241 243 245 247 249 251 253 255 257 259]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c02.avi Failed
+Training Epoch: 9, Loss: 0.1801734808393348
+Time taken for Epoch-9 is 2975.2397055625916
+
+Epoch 10 started
+Train at epoch 10
+Learning rate is: 5.0000000050000005e-05
+Training Epoch 10, Batch 0, Loss: 0.70979
+Training Epoch 10, Batch 50, Loss: 0.20156
+Training Epoch 10, Batch 100, Loss: 0.16632
+Training Epoch 10, Batch 150, Loss: 0.13010
+Training Epoch 10, Batch 200, Loss: 0.13153
+Training Epoch 10, Batch 250, Loss: 0.14958
+Training Epoch 10, Batch 300, Loss: 0.14866
+Training Epoch 10, Batch 350, Loss: 0.14179
+Training Epoch 10, Batch 400, Loss: 0.14276
+Training Epoch 10, Batch 450, Loss: 0.14511
+Training Epoch 10, Batch 500, Loss: 0.14338
+Training Epoch 10, Batch 550, Loss: 0.14336
+Training Epoch 10, Batch 600, Loss: 0.14312
+Training Epoch 10, Batch 650, Loss: 0.14137
+Training Epoch 10, Batch 700, Loss: 0.14130
+Training Epoch 10, Batch 750, Loss: 0.13902
+Training Epoch 10, Batch 800, Loss: 0.14191
+Training Epoch 10, Batch 850, Loss: 0.14244
+Training Epoch 10, Batch 900, Loss: 0.14089
+Training Epoch 10, Batch 950, Loss: 0.14149
+Training Epoch 10, Batch 1000, Loss: 0.13772
+Training Epoch 10, Batch 1050, Loss: 0.13759
+Training Epoch 10, Batch 1100, Loss: 0.13592
+Training Epoch 10, Batch 1150, Loss: 0.13612
+Training Epoch 10, Batch 1200, Loss: 0.14010
+Training Epoch 10, Batch 1250, Loss: 0.14591
+Training Epoch 10, Batch 1300, Loss: 0.15219
+Training Epoch 10, Batch 1350, Loss: 0.15078
+Training Epoch 10, Batch 1400, Loss: 0.15063
+Training Epoch 10, Batch 1450, Loss: 0.15180
+Training Epoch 10, Batch 1500, Loss: 0.15339
+Training Epoch 10, Batch 1550, Loss: 0.15368
+Training Epoch 10, Batch 1600, Loss: 0.15393
+Training Epoch 10, Batch 1650, Loss: 0.15509
+Training Epoch 10, Batch 1700, Loss: 0.15448
+Training Epoch 10, Batch 1750, Loss: 0.15545
+Training Epoch 10, Batch 1800, Loss: 0.15856
+Training Epoch 10, Batch 1850, Loss: 0.15637
+Training Epoch 10, Batch 1900, Loss: 0.15726
+Training Epoch 10, Batch 1950, Loss: 0.15616
+Training Epoch 10, Batch 2000, Loss: 0.15561
+Training Epoch 10, Batch 2050, Loss: 0.15638
+Training Epoch 10, Batch 2100, Loss: 0.15660
+Training Epoch 10, Batch 2150, Loss: 0.15761
+Training Epoch 10, Batch 2200, Loss: 0.15783
+Training Epoch 10, Batch 2250, Loss: 0.15722
+Training Epoch 10, Batch 2300, Loss: 0.15698
+Training Epoch 10, Batch 2350, Loss: 0.15591
+Training Epoch: 10, Loss: 0.15569896875906042
+Validation at epoch 10.
+Validation Epoch 10, Batch 0 - Loss : 1.217350959777832
+Validation Epoch 10, Batch 50 - Loss : 0.7706117109149037
+Validation Epoch 10, Batch 100 - Loss : 0.8742231341334761
+Validation Epoch 10, Batch 150 - Loss : 0.8023391368109671
+Validation Epoch 10, Batch 200 - Loss : 0.7567103456428381
+Validation Epoch 10, Batch 250 - Loss : 0.7103053636779819
+Validation Epoch 10, Batch 300 - Loss : 0.739522039061652
+Validation Epoch 10, Batch 350 - Loss : 0.7549766854665301
+Validation Epoch 10, Batch 400 - Loss : 0.744482626601127
+Validation Epoch 10, Batch 450 - Loss : 0.7247924377092216
+Validation Epoch 10, Batch 500 - Loss : 0.7084679572832326
+Validation Epoch 10, Batch 550 - Loss : 0.6956814864115619
+Validation Epoch 10, Batch 600 - Loss : 0.6765993684031474
+Validation Epoch 10, Batch 650 - Loss : 0.6554052779536312
+Validation Epoch 10, Batch 700 - Loss : 0.654033767188316
+Validation Epoch 10, Batch 750 - Loss : 0.6550065284801372
+Validation Epoch 10, Batch 800 - Loss : 0.6601881725402152
+Validation Epoch 10, Batch 850 - Loss : 0.6606320269036076
+Validation Epoch 10, Batch 900 - Loss : 0.657376915485519
+Total video count: 3783
+Epoch 10, * Video Acc@1 82.902 Video Acc@5 95.851, Loss: 0.6727390793038569
+Time taken for Epoch-10 is 3360.827682495117
+
+Epoch 11 started
+Train at epoch 11
+Learning rate is: 5.0000000050000005e-05
+Training Epoch 11, Batch 0, Loss: 0.00444
+Training Epoch 11, Batch 50, Loss: 0.07358
+Training Epoch 11, Batch 100, Loss: 0.12883
+Training Epoch 11, Batch 150, Loss: 0.12735
+Training Epoch 11, Batch 200, Loss: 0.14436
+Training Epoch 11, Batch 250, Loss: 0.15127
+Training Epoch 11, Batch 300, Loss: 0.15196
+Training Epoch 11, Batch 350, Loss: 0.16209
+Training Epoch 11, Batch 400, Loss: 0.15879
+Training Epoch 11, Batch 450, Loss: 0.16746
+Training Epoch 11, Batch 500, Loss: 0.16485
+Training Epoch 11, Batch 550, Loss: 0.15963
+Training Epoch 11, Batch 600, Loss: 0.15584
+Training Epoch 11, Batch 650, Loss: 0.15418
+Training Epoch 11, Batch 700, Loss: 0.15404
+Training Epoch 11, Batch 750, Loss: 0.15027
+Training Epoch 11, Batch 800, Loss: 0.14860
+Training Epoch 11, Batch 850, Loss: 0.14962
+Training Epoch 11, Batch 900, Loss: 0.14622
+Training Epoch 11, Batch 950, Loss: 0.14834
+Training Epoch 11, Batch 1000, Loss: 0.14739
+Training Epoch 11, Batch 1050, Loss: 0.14945
+Training Epoch 11, Batch 1100, Loss: 0.15015
+Training Epoch 11, Batch 1150, Loss: 0.14764
+Training Epoch 11, Batch 1200, Loss: 0.14974
+Training Epoch 11, Batch 1250, Loss: 0.15393
+Training Epoch 11, Batch 1300, Loss: 0.15551
+Training Epoch 11, Batch 1350, Loss: 0.15505
+Training Epoch 11, Batch 1400, Loss: 0.15506
+Training Epoch 11, Batch 1450, Loss: 0.15625
+Training Epoch 11, Batch 1500, Loss: 0.15485
+Training Epoch 11, Batch 1550, Loss: 0.15812
+Training Epoch 11, Batch 1600, Loss: 0.15719
+Training Epoch 11, Batch 1650, Loss: 0.15615
+Training Epoch 11, Batch 1700, Loss: 0.15508
+Training Epoch 11, Batch 1750, Loss: 0.15499
+Training Epoch 11, Batch 1800, Loss: 0.15447
+Training Epoch 11, Batch 1850, Loss: 0.15310
+Training Epoch 11, Batch 1900, Loss: 0.15249
+Training Epoch 11, Batch 1950, Loss: 0.15575
+Training Epoch 11, Batch 2000, Loss: 0.15469
+Training Epoch 11, Batch 2050, Loss: 0.15824
+Training Epoch 11, Batch 2100, Loss: 0.16424
+Training Epoch 11, Batch 2150, Loss: 0.16368
+Training Epoch 11, Batch 2200, Loss: 0.16403
+Training Epoch 11, Batch 2250, Loss: 0.16476
+Training Epoch 11, Batch 2300, Loss: 0.16309
+Training Epoch 11, Batch 2350, Loss: 0.16241
+Training Epoch: 11, Loss: 0.16253164311601492
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Learning rate dropping to its 2th value to 2.5000000025000002e-05 at epoch 11
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Time taken for Epoch-11 is 2972.61457490921
+
+Epoch 12 started
+Train at epoch 12
+Learning rate is: 2.5000000025000002e-05
+Training Epoch 12, Batch 0, Loss: 0.21046
+Training Epoch 12, Batch 50, Loss: 0.25267
+Training Epoch 12, Batch 100, Loss: 0.16991
+Training Epoch 12, Batch 150, Loss: 0.16569
+Training Epoch 12, Batch 200, Loss: 0.15064
+Training Epoch 12, Batch 250, Loss: 0.13525
+Training Epoch 12, Batch 300, Loss: 0.12308
+Training Epoch 12, Batch 350, Loss: 0.11620
+Training Epoch 12, Batch 400, Loss: 0.10645
+Training Epoch 12, Batch 450, Loss: 0.09750
+Training Epoch 12, Batch 500, Loss: 0.09484
+Training Epoch 12, Batch 550, Loss: 0.09344
+Training Epoch 12, Batch 600, Loss: 0.09079
+Training Epoch 12, Batch 650, Loss: 0.08530
+Training Epoch 12, Batch 700, Loss: 0.08552
+Training Epoch 12, Batch 750, Loss: 0.08635
+Training Epoch 12, Batch 800, Loss: 0.08327
+Training Epoch 12, Batch 850, Loss: 0.07974
+Training Epoch 12, Batch 900, Loss: 0.07794
+Training Epoch 12, Batch 950, Loss: 0.07526
+Training Epoch 12, Batch 1000, Loss: 0.07578
+Training Epoch 12, Batch 1050, Loss: 0.07362
+Training Epoch 12, Batch 1100, Loss: 0.07320
+Training Epoch 12, Batch 1150, Loss: 0.07192
+Training Epoch 12, Batch 1200, Loss: 0.07238
+Training Epoch 12, Batch 1250, Loss: 0.07197
+Training Epoch 12, Batch 1300, Loss: 0.07282
+Training Epoch 12, Batch 1350, Loss: 0.07218
+Training Epoch 12, Batch 1400, Loss: 0.07331
+Training Epoch 12, Batch 1450, Loss: 0.07183
+Training Epoch 12, Batch 1500, Loss: 0.07198
+Training Epoch 12, Batch 1550, Loss: 0.07261
+Training Epoch 12, Batch 1600, Loss: 0.07241
+Training Epoch 12, Batch 1650, Loss: 0.07241
+Training Epoch 12, Batch 1700, Loss: 0.07356
+Training Epoch 12, Batch 1750, Loss: 0.07224
+Training Epoch 12, Batch 1800, Loss: 0.07112
+Training Epoch 12, Batch 1850, Loss: 0.07145
+Training Epoch 12, Batch 1900, Loss: 0.07146
+Training Epoch 12, Batch 1950, Loss: 0.07183
+Training Epoch 12, Batch 2000, Loss: 0.07229
+Training Epoch 12, Batch 2050, Loss: 0.07139
+Training Epoch 12, Batch 2100, Loss: 0.07085
+Training Epoch 12, Batch 2150, Loss: 0.07071
+Training Epoch 12, Batch 2200, Loss: 0.06986
+Training Epoch 12, Batch 2250, Loss: 0.06948
+Training Epoch 12, Batch 2300, Loss: 0.06930
+Training Epoch 12, Batch 2350, Loss: 0.06909
+[265 267 269 271 273 275 277 279 281 283 285 287 289 291 293 295]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c01.avi Failed
+Training Epoch: 12, Loss: 0.06968910229376242
+Time taken for Epoch-12 is 2972.9687151908875
+
+Epoch 13 started
+Train at epoch 13
+Learning rate is: 2.5000000025000002e-05
+Training Epoch 13, Batch 0, Loss: 0.00086
+Training Epoch 13, Batch 50, Loss: 0.09595
+Training Epoch 13, Batch 100, Loss: 0.06974
+Training Epoch 13, Batch 150, Loss: 0.06171
+Training Epoch 13, Batch 200, Loss: 0.05825
+Training Epoch 13, Batch 250, Loss: 0.06502
+Training Epoch 13, Batch 300, Loss: 0.06139
+Training Epoch 13, Batch 350, Loss: 0.05730
+Training Epoch 13, Batch 400, Loss: 0.06187
+Training Epoch 13, Batch 450, Loss: 0.05959
+Training Epoch 13, Batch 500, Loss: 0.05972
+Training Epoch 13, Batch 550, Loss: 0.05589
+Training Epoch 13, Batch 600, Loss: 0.05396
+Training Epoch 13, Batch 650, Loss: 0.05402
+Training Epoch 13, Batch 700, Loss: 0.05302
+Training Epoch 13, Batch 750, Loss: 0.05146
+Training Epoch 13, Batch 800, Loss: 0.05033
+Training Epoch 13, Batch 850, Loss: 0.05422
+Training Epoch 13, Batch 900, Loss: 0.05476
+Training Epoch 13, Batch 950, Loss: 0.05528
+Training Epoch 13, Batch 1000, Loss: 0.05433
+Training Epoch 13, Batch 1050, Loss: 0.05513
+Training Epoch 13, Batch 1100, Loss: 0.05667
+Training Epoch 13, Batch 1150, Loss: 0.05669
+Training Epoch 13, Batch 1200, Loss: 0.05806
+Training Epoch 13, Batch 1250, Loss: 0.05903
+Training Epoch 13, Batch 1300, Loss: 0.05851
+Training Epoch 13, Batch 1350, Loss: 0.05758
+Training Epoch 13, Batch 1400, Loss: 0.05802
+Training Epoch 13, Batch 1450, Loss: 0.05779
+Training Epoch 13, Batch 1500, Loss: 0.05675
+Training Epoch 13, Batch 1550, Loss: 0.05607
+Training Epoch 13, Batch 1600, Loss: 0.05741
+Training Epoch 13, Batch 1650, Loss: 0.05629
+Training Epoch 13, Batch 1700, Loss: 0.05682
+Training Epoch 13, Batch 1750, Loss: 0.05713
+Training Epoch 13, Batch 1800, Loss: 0.05753
+Training Epoch 13, Batch 1850, Loss: 0.05907
+Training Epoch 13, Batch 1900, Loss: 0.06115
+Training Epoch 13, Batch 1950, Loss: 0.06232
+Training Epoch 13, Batch 2000, Loss: 0.06306
+Training Epoch 13, Batch 2050, Loss: 0.06259
+Training Epoch 13, Batch 2100, Loss: 0.06244
+Training Epoch 13, Batch 2150, Loss: 0.06289
+Training Epoch 13, Batch 2200, Loss: 0.06371
+Training Epoch 13, Batch 2250, Loss: 0.06340
+Training Epoch 13, Batch 2300, Loss: 0.06344
+Training Epoch 13, Batch 2350, Loss: 0.06381
+Clip ../../datasets/UCF101-videos/Videos/SoccerJuggling/v_SoccerJuggling_g16_c07.avi is missing 2 frames.
+Clip ../../datasets/UCF101-videos/Videos/JumpRope/v_JumpRope_g17_c01.avi is missing 4 frames.
+[491 493 495 497 499 501 503 505 507 509 511 513 515 517 519 521]
+Clip ../../datasets/UCF101-videos/Videos/Basketball/v_Basketball_g16_c01.avi Failed
+Training Epoch: 13, Loss: 0.06412781984991305
+Time taken for Epoch-13 is 2975.743894100189
+
+Epoch 14 started
+Train at epoch 14
+Learning rate is: 2.5000000025000002e-05
+Training Epoch 14, Batch 0, Loss: 0.00611
+Training Epoch 14, Batch 50, Loss: 0.04660
+Training Epoch 14, Batch 100, Loss: 0.02934
+Training Epoch 14, Batch 150, Loss: 0.03405
+Training Epoch 14, Batch 200, Loss: 0.03466
+Training Epoch 14, Batch 250, Loss: 0.03297
+Training Epoch 14, Batch 300, Loss: 0.03567
+Training Epoch 14, Batch 350, Loss: 0.03839
+Training Epoch 14, Batch 400, Loss: 0.03580
+Training Epoch 14, Batch 450, Loss: 0.03843
+Training Epoch 14, Batch 500, Loss: 0.03879
+Training Epoch 14, Batch 550, Loss: 0.04059
+Training Epoch 14, Batch 600, Loss: 0.05066
+Training Epoch 14, Batch 650, Loss: 0.05460
+Training Epoch 14, Batch 700, Loss: 0.05783
+Training Epoch 14, Batch 750, Loss: 0.05871
+Training Epoch 14, Batch 800, Loss: 0.05844
+Training Epoch 14, Batch 850, Loss: 0.06683
+Training Epoch 14, Batch 900, Loss: 0.06878
+Training Epoch 14, Batch 950, Loss: 0.06617
+Training Epoch 14, Batch 1000, Loss: 0.06835
+Training Epoch 14, Batch 1050, Loss: 0.06778
+Training Epoch 14, Batch 1100, Loss: 0.06562
+Training Epoch 14, Batch 1150, Loss: 0.06423
+Training Epoch 14, Batch 1200, Loss: 0.06411
+Training Epoch 14, Batch 1250, Loss: 0.06420
+Training Epoch 14, Batch 1300, Loss: 0.06579
+Training Epoch 14, Batch 1350, Loss: 0.06702
+Training Epoch 14, Batch 1400, Loss: 0.06587
+Training Epoch 14, Batch 1450, Loss: 0.06484
+Training Epoch 14, Batch 1500, Loss: 0.06301
+Training Epoch 14, Batch 1550, Loss: 0.06171
+Training Epoch 14, Batch 1600, Loss: 0.06228
+Training Epoch 14, Batch 1650, Loss: 0.06145
+Training Epoch 14, Batch 1700, Loss: 0.06062
+Training Epoch 14, Batch 1750, Loss: 0.06022
+Training Epoch 14, Batch 1800, Loss: 0.05991
+Training Epoch 14, Batch 1850, Loss: 0.05985
+Training Epoch 14, Batch 1900, Loss: 0.06002
+Training Epoch 14, Batch 1950, Loss: 0.05958
+Training Epoch 14, Batch 2000, Loss: 0.05995
+Training Epoch 14, Batch 2050, Loss: 0.05964
+Training Epoch 14, Batch 2100, Loss: 0.05897
+Training Epoch 14, Batch 2150, Loss: 0.05949
+Training Epoch 14, Batch 2200, Loss: 0.05994
+Training Epoch 14, Batch 2250, Loss: 0.05926
+Training Epoch 14, Batch 2300, Loss: 0.05939
+Training Epoch 14, Batch 2350, Loss: 0.05894
+Training Epoch: 14, Loss: 0.05962921810984749
+Time taken for Epoch-14 is 2981.205497264862
+
+Epoch 15 started
+Train at epoch 15
+Learning rate is: 2.5000000025000002e-05
+Training Epoch 15, Batch 0, Loss: 0.09448
+Training Epoch 15, Batch 50, Loss: 0.01635
+Training Epoch 15, Batch 100, Loss: 0.03536
+Training Epoch 15, Batch 150, Loss: 0.02887
+Training Epoch 15, Batch 200, Loss: 0.02547
+Training Epoch 15, Batch 250, Loss: 0.03193
+Training Epoch 15, Batch 300, Loss: 0.03205
+Training Epoch 15, Batch 350, Loss: 0.03826
+Training Epoch 15, Batch 400, Loss: 0.03622
+Training Epoch 15, Batch 450, Loss: 0.03883
+Training Epoch 15, Batch 500, Loss: 0.03694
+Training Epoch 15, Batch 550, Loss: 0.04097
+Training Epoch 15, Batch 600, Loss: 0.04809
+Training Epoch 15, Batch 650, Loss: 0.04957
+Training Epoch 15, Batch 700, Loss: 0.04675
+Training Epoch 15, Batch 750, Loss: 0.04638
+Training Epoch 15, Batch 800, Loss: 0.04495
+Training Epoch 15, Batch 850, Loss: 0.04621
+Training Epoch 15, Batch 900, Loss: 0.04936
+Training Epoch 15, Batch 950, Loss: 0.05268
+Training Epoch 15, Batch 1000, Loss: 0.05190
+Training Epoch 15, Batch 1050, Loss: 0.05065
+Training Epoch 15, Batch 1100, Loss: 0.04953
+Training Epoch 15, Batch 1150, Loss: 0.04895
+Training Epoch 15, Batch 1200, Loss: 0.04775
+Training Epoch 15, Batch 1250, Loss: 0.04725
+Training Epoch 15, Batch 1300, Loss: 0.04826
+Training Epoch 15, Batch 1350, Loss: 0.04912
+Training Epoch 15, Batch 1400, Loss: 0.04949
+Training Epoch 15, Batch 1450, Loss: 0.04994
+Training Epoch 15, Batch 1500, Loss: 0.05036
+Training Epoch 15, Batch 1550, Loss: 0.04973
+Training Epoch 15, Batch 1600, Loss: 0.04955
+Training Epoch 15, Batch 1650, Loss: 0.04847
+Training Epoch 15, Batch 1700, Loss: 0.04772
+Training Epoch 15, Batch 1750, Loss: 0.04761
+Training Epoch 15, Batch 1800, Loss: 0.04830
+Training Epoch 15, Batch 1850, Loss: 0.04907
+Training Epoch 15, Batch 1900, Loss: 0.04878
+Training Epoch 15, Batch 1950, Loss: 0.04979
+Training Epoch 15, Batch 2000, Loss: 0.05100
+Training Epoch 15, Batch 2050, Loss: 0.05086
+Training Epoch 15, Batch 2100, Loss: 0.05055
+Training Epoch 15, Batch 2150, Loss: 0.05183
+Training Epoch 15, Batch 2200, Loss: 0.05180
+Training Epoch 15, Batch 2250, Loss: 0.05302
+Training Epoch 15, Batch 2300, Loss: 0.05345
+Training Epoch 15, Batch 2350, Loss: 0.05344
+Clip ../../datasets/UCF101-videos/Videos/SoccerJuggling/v_SoccerJuggling_g24_c07.avi is missing 2 frames.
+[264 266 268 270 272 274 276 278 280 282 284 286 288 290 292 294]
+Clip ../../datasets/UCF101-videos/Videos/GolfSwing/v_GolfSwing_g22_c02.avi Failed
+Training Epoch: 15, Loss: 0.053190993376736884
+Time taken for Epoch-15 is 2983.65874171257
+
+Epoch 16 started
+Train at epoch 16
+Learning rate is: 2.5000000025000002e-05
+Training Epoch 16, Batch 0, Loss: 0.00046
+Training Epoch 16, Batch 50, Loss: 0.01848
+Training Epoch 16, Batch 100, Loss: 0.01904
+Training Epoch 16, Batch 150, Loss: 0.02028
+Training Epoch 16, Batch 200, Loss: 0.02090
+Training Epoch 16, Batch 250, Loss: 0.03663
+Training Epoch 16, Batch 300, Loss: 0.03437
+Training Epoch 16, Batch 350, Loss: 0.03138
+Training Epoch 16, Batch 400, Loss: 0.03953
+Training Epoch 16, Batch 450, Loss: 0.04007
+Training Epoch 16, Batch 500, Loss: 0.04566
+Training Epoch 16, Batch 550, Loss: 0.04216
+Training Epoch 16, Batch 600, Loss: 0.04410
+Training Epoch 16, Batch 650, Loss: 0.04342
+Training Epoch 16, Batch 700, Loss: 0.04144
+Training Epoch 16, Batch 750, Loss: 0.04272
+Training Epoch 16, Batch 800, Loss: 0.04110
+Training Epoch 16, Batch 850, Loss: 0.04124
+Training Epoch 16, Batch 900, Loss: 0.04197
+Training Epoch 16, Batch 950, Loss: 0.04321
+slurmstepd: error: *** JOB 60862 ON c4-2 CANCELLED AT 2022-12-06T00:01:48 ***
